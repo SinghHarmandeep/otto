@@ -8,7 +8,7 @@ const dd = () => {
     return(
         <React.Fragment>
             <Nav />
-            <h1>hello babyGirl</h1>
+            <h1>hello BigWorld</h1>
         </React.Fragment>
     )
 };
