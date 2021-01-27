@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    
+    /* Visit https://aka.ms/tsconfig.json to read more about this file */
+
+    "outDir": "./public/js/",
+    "noImplicitAny": true,
+    "module": "es6",
+    "moduleResolution": "node",
+    "target": "es5",
+    "jsx": "react",
+    "allowSyntheticDefaultImports": true,
+    "allowJs": true,
+    "lib":[
+        "es2015", "dom"
+    ]
+  },
+  "include": [
+      "src/client/**/*"
+  ],
+  "exclude": [
+      "node_modules"
+  ]
+}
