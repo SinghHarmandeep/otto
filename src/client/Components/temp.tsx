@@ -2,7 +2,7 @@ import React from 'react';
 
 const temp = () => {
     return (
-        <p>this should display on the temp page</p>
+        <p>this should display on the </p>
     )
 }
 

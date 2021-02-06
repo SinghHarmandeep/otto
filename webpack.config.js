@@ -35,27 +35,27 @@ const clientConfig = {
     entry: './src/client/index.tsx',
     devtool: 'inline-source-map',
     module: {
-      rules: [
-        {
-            test: /\.tsx?$/,
-            loader: 'ts-loader',
-            exclude: /node_modules/,
-            options: {
-                configFile: 'tsconfig.client.json'
+        rules: [
+            {
+                test: /\.tsx?$/,
+                loader: 'ts-loader',
+                exclude: /node_modules/,
+                options: {
+                    configFile: 'tsconfig.client.json'
+                }
+            },
+            {
+                test: /\.s[ca]ss$/,
+                use: [
+                    // Creates `style` nodes from JS strings
+                    'style-loader',
+                    // Translates CSS into CommonJS
+                    'css-loader',
+                    // Compiles Sass to CSS
+                    'sass-loader',
+                ]
             }
-        },
-        {
-            test: /\.s[ca]ss$/,
-            use: [
-                 // Creates `style` nodes from JS strings
-                'style-loader',
-                // Translates CSS into CommonJS
-                'css-loader',
-                // Compiles Sass to CSS
-                'sass-loader',
-            ]
-        }
-      ]
+        ]
     },
     resolve: {
         extensions: ['.tsx', '.ts', '.js', '.css', '.scss']
