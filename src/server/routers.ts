@@ -3,13 +3,19 @@ import * as path from 'path';
 
 const routers = express.Router();
 
+routers.put('/gobi/:in?', (req, res) => {
+    
+    console.log(req.params.in);
 
-routers.get('*', (req, res) => {
+    if (req.params.in) {
+        res.json(`going Places ${req.params.in}`)
+    }
+    res.send('enter correct params')
+})
+
+routers.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname,'../public/index.html'))
 })
 
-routers.post('/gobi', (req, res, next) => {
-    res.json(`going Places`)
-})
 
 export default routers;
