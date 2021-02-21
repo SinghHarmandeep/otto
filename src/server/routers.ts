@@ -3,7 +3,7 @@ import * as path from 'path';
 
 const routers = express.Router();
 
-routers.put('/gobi/:in?', (req, res) => {
+routers.post('/gobi/:in?', (req, res) => {
     
     console.log(req.params.in);
 
