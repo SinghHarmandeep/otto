@@ -7,7 +7,7 @@ const form = () => {
                 <div className="form-group">
                     <label>Pick up address:</label>
                     <input type="text" className="form-control" id="pickup" aria-describedby="emailHelp" placeholder="123 abc street" />
-                    <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
+                    <small id="emailHelp" className="form-text text-muted">We'll never share your pickup address with anyone else.</small>
                 </div>
 
                 <div className="form-group">
@@ -17,7 +17,7 @@ const form = () => {
                 <div className="form-group">
                     <label>Drop off address:</label>
                     <input type="text" className="form-control" id="dropoff" aria-describedby="emailHelp" placeholder="123 abc street" />
-                    <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
+                    <small id="emailHelp" className="form-text text-muted">We'll never share your drop off with anyone else.</small>
                 </div>
                 <div className="form-group row">
                     <label className="col-2 col-form-label">Date</label>
