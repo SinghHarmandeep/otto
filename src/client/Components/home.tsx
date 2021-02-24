@@ -1,10 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import Navbar from './navbar';
+
 const home = () => {
     return (
         <div className='container' >
-            <h1 className='d-flex justify-content-center text-light'>Making deliveries accessable!</h1>
+            <Navbar />
+            <h1 className='d-flex justify-content-center'>Making deliveries accessable!</h1>
             <h2 className='d-flex justify-content-center'>
                 Get anything from anywhere to anywhere from the comfort of your home! <br></br>
             </h2>
