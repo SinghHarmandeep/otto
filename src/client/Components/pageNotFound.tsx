@@ -9,7 +9,7 @@ const error = () => {
                     <title>404 page not found</title>
                 </Helmet>
                 <h1 className="d-flex justify-content-center text-warning">404 page not found</h1>
-                <Link className='d-flex justify-content-center text-light' to='/findRide'>Return Home</Link>
+                <Link className='d-flex justify-content-center' to='/'>Return Home</Link>
             </div>
     )
 }
