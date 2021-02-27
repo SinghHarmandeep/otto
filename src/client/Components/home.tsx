@@ -19,7 +19,7 @@ const home = () => {
             </ul>
             <h1 >
                 Horrary that's all. Now you pay us for the exclusive service and we
-                deliver your item in real time, yes you heard it right real time! Check the status in the app
+                deliver your item in real time, yes you heard it right real time!
                 <br></br>
                 <Link type="button" className="list-group btn btn-primary" to='/findride'>Let's get to it</Link>
             </h1>

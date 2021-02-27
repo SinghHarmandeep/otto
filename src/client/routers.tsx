@@ -4,12 +4,14 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ride from './Components/findRide';
 import home from './Components/home';
 import error from './Components/pageNotFound';
+import about from './Components/about';
 
 const dd = () => {
     return (
         <Router>
             <Switch>
                 <Route exact path = '/findride' component = {ride} />
+                <Route exact path = '/about' component = {about} />
                 <Route exact path = '/' component = {home} />
                 <Route path = '/*' component = {error} />
             </Switch>
