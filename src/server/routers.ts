@@ -3,14 +3,11 @@ import * as path from 'path';
 
 const routers = express.Router();
 
-routers.post('/gobi/:in?', (req, res) => {
-    
-    console.log(req.params.in);
+routers.post('/findride', (req, res) => {
+    let order = req.body;
 
-    if (req.params.in) {
-        res.json(`going Places ${req.params.in}`)
-    }
-    res.send('enter correct params')
+    
+    res.send(200);
 })
 
 routers.get('/*', (req, res) => {
