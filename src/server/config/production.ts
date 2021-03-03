@@ -1,3 +1,3 @@
 export default {
-    GMapAPI: process.env.GC_EMBED_MAP_API
+    GMapAPI: process.env.G_Map_Api
 }
