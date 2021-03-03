@@ -1,7 +1,12 @@
 import React from 'react';
+import config from '../../server/config';
 
 const mapView = () => {
-    let dd: string = `sdfs`
+
+
+    let zoom: number = 7
+    let url: string =  `https://www.google.com/maps/embed/v1/directions?key=${config.GMapAPI}&origin=Oslo+Norway
+    &destination=Telemark+Norway&zoom=${zoom}`
     return (
         <div>
             <iframe
@@ -10,9 +15,8 @@ const mapView = () => {
                 // style="border:0"
                 loading="lazy"
                 // allowfullscreen
-                src='https://www.google.com/maps/embed/v1/place?key=${dd}&q=Space+Needle,Seattle+WA'>
+                src={url}>
             </iframe>
-            <p>{dd}</p>
         </div>
     )
 }
