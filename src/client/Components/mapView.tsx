@@ -5,7 +5,7 @@ const mapView = () => {
 
 
     let zoom: number = 7
-    let url: string =  `https://www.google.com/maps/embed/v1/directions?key=${config.GMapAPI}&origin=Oslo+Norway
+    let url: string =  `https://www.google.com/maps/embed/v1/directions?key=AIzaSyCKc1996d4bqqe8myQNXpG5fQTsePWmHPg&origin=Oslo+Norway
     &destination=Telemark+Norway&zoom=${zoom}`
     return (
         <div>

@@ -1,3 +1,3 @@
 export default {
-    GMapAPI: process.env.G_MAP_API
+    // GMapAPI: process.env.G_MAP_API
 }
