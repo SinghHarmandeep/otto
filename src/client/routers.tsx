@@ -5,6 +5,7 @@ import ride from './Components/findRide';
 import home from './Components/home';
 import error from './Components/pageNotFound';
 import about from './Components/about';
+import contact from './Components/contact';
 
 const dd = () => {
     return (
@@ -12,6 +13,7 @@ const dd = () => {
             <Switch>
                 <Route exact path = '/findride' component = {ride} />
                 <Route exact path = '/about' component = {about} />
+                <Route exact path = '/contact' component = {contact} />
                 <Route exact path = '/' component = {home} />
                 <Route path = '/*' component = {error} />
             </Switch>

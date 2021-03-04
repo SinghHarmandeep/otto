@@ -21,7 +21,8 @@ const home = () => {
                 Horrary that's all. Now you pay us for the exclusive service and we
                 deliver your item in real time, yes you heard it right real time!
                 <br></br>
-                <Link type="button" className="list-group btn btn-primary" to='/findride'>Let's get to it</Link>
+                <Link type="button" className="btn btn-primary col-12" to='/findride'>Let's get to it</Link>
+                {/* <a type="button" className="btn btn-primary col-12" href='/findride'>Let's rock</a> */}
             </h1>
         </div>
 
