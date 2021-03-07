@@ -7,6 +7,7 @@ const contact = () => {
             <h1>Contact us</h1>
             <form action="varify()" method='POST'>
                 <input type="email" name="email" id="" placeholder='abc@abc.com'/>
+                <input type="file" name="inFile" id=""/>
             </form>
         </div>
     )
