@@ -1,5 +1,5 @@
 import React from 'react';
-import config from '../../server/config';
+
 
 const mapView = () => {
 
