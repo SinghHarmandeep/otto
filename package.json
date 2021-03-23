@@ -9,6 +9,7 @@
     "dev": "npm-run-all --parallel watch:*",
     "watch:build": "npx webpack -w",
     "watch:server": "nodemon dist/server.js",
+    "debug:watch:server": "nodemon --inspect dist/server.js",
     "build": "npx webpack"
   },
   "keywords": [],

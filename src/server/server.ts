@@ -1,6 +1,6 @@
 import * as express from "express"; //stick with this syntex, as specified in the cofig files
 import * as cors from "cors";
-import * as Mongoose from 'mongoose';
+import * as mongoose from 'mongoose';
 
 import config from './config';
 import Routers from './routers';
@@ -11,9 +11,9 @@ app.use(express.static('public'));
 app.use(express.json())
 app.use(Routers);
 
-Mongoose.connect(config.MongoURI, {useNewUrlParser: true, useUnifiedTopology: true})
-.then(()=> console.log('successfully connected to the DB'))
-.catch(err => console.log(`error message ${err}`))
+mongoose.connect(config.MongoURI, {useNewUrlParser: true, useUnifiedTopology: true})
+    .then(()=> console.log('successfully connected to the DB'))
+    .catch(err => console.log(`error message ${err}`))
 
 
 const port = process.env.PORT || 3000
