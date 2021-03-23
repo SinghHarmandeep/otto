@@ -1,6 +1,7 @@
 import * as express from "express";
 import * as path from 'path';
-import { debug } from "webpack";
+import mongoose from 'mongoose';
+import User from './models/Users';
 
 const routers = express.Router();
 
@@ -12,6 +13,14 @@ routers.post('/findride', (req, res) => {
 })
 
 routers.get('/*', (req, res) => {
+    const user = new User(
+        {
+            handle: 'gobi',
+            email: 'gobi@test.com',
+            password: `testpass`
+        }
+    )
+    // user.save();
     res.sendFile(path.join(__dirname,'../public/index.html'))
 })
 
