@@ -7,20 +7,12 @@ const routers = express.Router();
 
 routers.post('/findride', (req, res) => {
     let order = req.body;
-
     
-    res.send(200);
+    res.send(200).json(order);
 })
 
 routers.get('/*', (req, res) => {
-    const user = new User(
-        {
-            handle: 'gobi',
-            email: 'gobi@test.com',
-            password: `testpass`
-        }
-    )
-    // user.save();
+    
     res.sendFile(path.join(__dirname,'../public/index.html'))
 })
 

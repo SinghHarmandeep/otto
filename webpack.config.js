@@ -13,21 +13,30 @@ const serverConfig = {
                 options: {
                     configFile: 'tsconfig.server.json'
                 }
-            }
+            },
+            // {
+
+            //     test: [/\.jsx?$/],
+            //     exclude: /node_modules/,
+            //     loader: 'babel-loader',
+            //     options: {
+            //         presets: ['@babel/env', '@babel/react']
+            //     }
+            // }
         ]
     },
-    resolve: {
-        extensions: ['.tsx', '.ts', '.js']
-    },
-    output: {
-        filename: 'server.js',
+resolve: {
+    extensions: ['.tsx', '.ts', '.js']
+},
+output: {
+    filename: 'server.js',
         path: path.resolve(__dirname, 'dist')
-    },
-    target: 'node',
+},
+target: 'node',
     node: {
-        __dirname: false
-    },
-    externals: [nodeExternals()]
+    __dirname: false
+},
+externals: [nodeExternals()]
 };
 
 const clientConfig = {
