@@ -8,9 +8,12 @@ import about from './Components/about';
 import contact from './Components/contact';
 import login from './Components/login';
 
+import Navbar from './Components/navbar';
+
 const dd = () => {
     return (
         <Router>
+                <Navbar />
             <Switch>
                 <Route exact path = '/findride' component = {ride} />
                 <Route exact path = '/about' component = {about} />
