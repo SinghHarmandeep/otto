@@ -3,7 +3,7 @@ import * as cors from "cors";
 import * as mongoose from 'mongoose';
 
 import config from './config';
-import Routers from './routers';
+import Routers from './routes';
 
 let app = express();
 app.use(cors())
