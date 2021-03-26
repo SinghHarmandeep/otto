@@ -7,6 +7,7 @@ import error from './Components/pageNotFound';
 import about from './Components/about';
 import contact from './Components/contact';
 import login from './Components/login';
+import register from './Components/register';
 
 import Navbar from './Components/navbar';
 
@@ -19,6 +20,7 @@ const dd = () => {
                 <Route exact path = '/about' component = {about} />
                 <Route exact path = '/contact' component = {contact} />
                 <Route exact path = '/login' component = {login} />
+                <Route exact path = '/signup' component = {register} />
                 <Route exact path = '/' component = {home} />
                 <Route path = '/*' component = {error} />
             </Switch>
