@@ -5,13 +5,11 @@ import User from '../models/Users';
 const routers = express.Router();
 
 routers.post('/signup', (req, res) => {
-    console.log(req.body);
 
     User.findOne({ email: req.body.email })
         .then(user => {
             if (user) {
-                console.log(user);
-                res.json({ email: 'An account already exists with this email' });
+                res.json({ email: `An account already exists with email: ${req.body.email}` });
             } else {
                 const newUser = new User({
                     handle: req.body.username,
@@ -20,14 +18,7 @@ routers.post('/signup', (req, res) => {
                     phone: parseInt(req.body.phone)
                 })
                 newUser.save()
-                    .then((_err) => {
-                        console.log(_err + 'err');
-                        res.send(_err)
-                    }).catch(dd => {
-                        console.log(dd + "im not sure what");
-                        res.send(dd)
-                        
-                    })
+                    .then(user => res.json({status: 'user created', user})).catch(err => res.send(err))
             }
 
         }
