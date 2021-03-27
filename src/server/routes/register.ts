@@ -20,7 +20,6 @@ routers.post('/signup', (req, res) => {
                 newUser.save()
                     .then(user => res.json({status: 'user created', user})).catch(err => res.send(err))
             }
-
         }
         )
 
