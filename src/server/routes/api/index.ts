@@ -1,13 +1,11 @@
 import * as express from "express";
 
-import api from './api'
-import auth from './auth/'
-
+import routers from "./routers";
 
 const router = express.Router();
 
-router.use(api)
-router.use(auth)
+
+router.use(routers)
 
 
 export default router;

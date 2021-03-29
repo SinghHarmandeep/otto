@@ -9,7 +9,7 @@ class Login extends React.Component<Props, State> {
             <div className= 'container'>
                 <h1>LogIn page</h1>
                 <form action="../login" method='POST'>
-                    <input type="text" name="username" id="" placeholder='Cockroach' />
+                    <input type="text" name="email" id="" placeholder='Cockroach' />
                     <input type="password" name='pass' placeholder='********' />
                     <button type="submit" className="btn btn-primary col-12">Submit</button>
                 </form>
