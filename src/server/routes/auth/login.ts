@@ -10,9 +10,16 @@ routers.post('/login', (req, res) => {
     User.findOne({ email: info.email }).
         then((user) => {
             if (user) {
-                return res.send({ user, msg: 'account exists with this email' })
-            }else{
-                res.send({msg: 'no account with this email'})
+                bcrypt.compare(info.pass, user.password)
+                    .then((match) => {
+                        if (match) {
+                            return res.json({msg: 'Login Success'})
+                        }else{
+                            return res.status(400).json({msg: 'Invalid credintials pass'})
+                        }
+                    })
+            } else {
+                return res.status(400).json({ msg: 'no account with this email' })
             }
         }, (err) => {
             throw err;

@@ -10,7 +10,7 @@ routers.post('/signup', (req, res) => {
     User.findOne({ email: req.body.email })
         .then(user => {
             if (user) {
-                res.json({ email: `An account already exists with email: ${req.body.email}` });
+                res.status(404).json({ msg: `${req.body.email} used with an account already!` });
             } else {
 
                 const newUser = new User({
@@ -19,13 +19,13 @@ routers.post('/signup', (req, res) => {
                     password: req.body.pass,
                     phone: parseInt(req.body.phone)
                 })
-                
+
                 bcrypt.genSalt(11, (err, salt) => {
                     bcrypt.hash(req.body.pass, salt, (_err, hash) => {
                         if (_err) throw _err;
                         newUser.password = hash;
                         newUser.save()
-                            .then(user => res.json({ status: 'user created', user }))
+                            .then(user => res.json({ msg: 'user created', user }))
                             .catch(err => res.send(err))
                     })
                 })
