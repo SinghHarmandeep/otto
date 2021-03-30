@@ -1,4 +1,10 @@
-node_modules
+# dependencies
+node_modules/
+
+# production bundle
 dist/
 public/js/app.js
 src/server/config/development.ts
+
+# env veriables
+.env
