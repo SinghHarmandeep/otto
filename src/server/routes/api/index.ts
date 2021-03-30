@@ -1,11 +1,13 @@
 import * as express from "express";
 
-import routers from "./routers";
+import clientEnd from "./routers";
+import findRide from "./findRide"
 
 const router = express.Router();
 
 
-router.use(routers)
+router.use(clientEnd)
+router.use(findRide)
 
 
 export default router;
