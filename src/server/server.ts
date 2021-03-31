@@ -1,25 +1,23 @@
 import * as express from "express"; //stick with this syntex, as specified in the cofig files
 import * as cors from "cors";
 import * as mongoose from 'mongoose';
-import * as passport from "passport";
 import config from './config';
 import Routers from './routes';
 
-import './middlewares/passport-local-strategy'
-import './middlewares/passport-jwt-strategy'
+import { configurePassport } from './middlewares/passport-strategy'
 
 let app = express();
 
-app.use(passport.initialize());
+configurePassport(app);
 
 app.use(cors())
 app.use(express.static('public'));
 app.use(express.json())
-app.use(express.urlencoded({extended: false}));
+app.use(express.urlencoded({ extended: false }));
 app.use(Routers);
 
-mongoose.connect(config.MongoURI, {useNewUrlParser: true, useUnifiedTopology: true})
-    .then(()=> console.log('successfully connected to the DB'))
+mongoose.connect(config.MongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => console.log('successfully connected to the DB'))
     .catch(err => console.log(`error message ${err}`));
 
 
