@@ -6,9 +6,11 @@ import * as passport from "passport";
 import config from './config';
 import Routers from './routes';
 
+import './middlewares/passport-local-strategy'
+
 let app = express();
 
-// app.use(passport.initialize());
+app.use(passport.initialize());
 
 app.use(cors())
 app.use(express.static('public'));
