@@ -4,11 +4,15 @@ import * as passport from 'passport';
 const router = express.Router();
 
 
-router.post('/findride', passport.authenticate('jwt'), (req, res) => {
-    let order = req.body;
+router.post('/findride',
+    passport.authenticate('jwt'),
+    (req, res) => {
+        //data from request
+        let order = req.body;
+        //user info after verifing
+        let user = req.user
+        res.status(201).json({order, user});
 
-    res.status(201).json(order);
-    
-})
+    })
 
 export default router;

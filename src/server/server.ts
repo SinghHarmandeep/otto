@@ -2,7 +2,6 @@ import * as express from "express"; //stick with this syntex, as specified in th
 import * as cors from "cors";
 import * as mongoose from 'mongoose';
 import * as passport from "passport";
-
 import config from './config';
 import Routers from './routes';
 

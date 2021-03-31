@@ -4,12 +4,17 @@ import * as passportJWT from 'passport-jwt';
 
 const options = {
     jwtFromRequest: passportJWT.ExtractJwt.fromAuthHeaderAsBearerToken(),
-    secretOrKey: config.auth.secret
+    secretOrKey: config.auth.secret,
+    // passReqToCallback: true
 };
 
-
 passport.use(new passportJWT.Strategy(
-    options, (jwt_paylode, done) => {
-        console.log(jwt_paylode);
-        done(null, jwt_paylode)
+    options,
+    (jwt_paylode, done) => {
+        try {
+            
+            done(null, jwt_paylode)
+        } catch (error) {
+
+        }
     }))
