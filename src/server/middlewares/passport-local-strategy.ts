@@ -6,8 +6,12 @@ import { compareHash } from "../utils/passwords";
 import Users from '../models/Users'
 
 
-passport.serializeUser((user, done) => done(null, user))
-passport.deserializeUser((user, done) => done(null, user))
+passport.serializeUser((user: any, done) => {
+    done(null, user)
+})
+passport.deserializeUser((user: any, done) => {
+    done(null, user)
+})
 
 passport.use(new passportLocal.Strategy(
     {
@@ -21,14 +25,19 @@ passport.use(new passportLocal.Strategy(
                     if (user) {
                         if (compareHash(pass, user.password)) {
                             //if password is correct
-                            done(null, user)
+                            let u = {
+                                handle: user.handle,
+                                email: user.email,
+                                id: user._id
+                            };
+                            done(null, u)
                         } else {
                             //incorrect passwrd
-                            done(null, false, {message: 'incorrect message'})
+                            done(null, false, { message: 'incorrect message' })
                         }
                     } else {
                         //user not found in db
-                        done(null, false, {message: 'no accout exist with the credintials'})
+                        done(null, false, { message: 'no accout exist with the credintials' })
                     }
                 })
         } catch (error) {

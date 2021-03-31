@@ -7,6 +7,7 @@ import config from './config';
 import Routers from './routes';
 
 import './middlewares/passport-local-strategy'
+import './middlewares/passport-jwt-strategy'
 
 let app = express();
 
