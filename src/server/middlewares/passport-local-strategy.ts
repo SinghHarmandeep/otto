@@ -12,21 +12,23 @@ passport.deserializeUser((user, done) => done(null, user))
 passport.use(new passportLocal.Strategy(
     {
         usernameField: 'email',
-        passwordField: 'pass'
+        passwordField: 'pass',
     },
     (email, pass, done) => {
         try {
-
             Users.findOne({ email })
                 .then(user => {
                     if (user) {
                         if (compareHash(pass, user.password)) {
+                            //if password is correct
                             done(null, user)
                         } else {
-                            done(null, false)
+                            //incorrect passwrd
+                            done(null, false, {message: 'incorrect message'})
                         }
                     } else {
-                        done(null, false)
+                        //user not found in db
+                        done(null, false, {message: 'no accout exist with the credintials'})
                     }
                 })
         } catch (error) {
