@@ -1,9 +1,8 @@
-import * as jwt from "jsonwebtoken";
 
-import { Router} from "express";
+import { Router } from "express";
 import { authenticate } from "passport";
 
-import config from '../../config';
+import { createToken, Ipayload } from '../../utils/tokens';
 
 const routers = Router();
 
@@ -15,8 +14,7 @@ routers.post('/login', (req, res, next) => {
             return res.json({ msg: 'Invalid email or password' })
         }
         req.logIn(user, function (err) {
-            console.log(user);
-            
+
             if (err) { return next(err); }
             // jwt init
             const payload: Ipayload = {
@@ -24,26 +22,15 @@ routers.post('/login', (req, res, next) => {
                 email: user.email,
                 id: user.id
             }
-            jwt.sign(
-                payload,
-                config.auth.secret,
-                { expiresIn: '2 days' },
-                (err, token) => {
-                    return res.json({
-                        success: true,
-                        token: `Bearer ${token}`
-                    })
-                })
+            let token = createToken(payload)
+
+            res.json({success: true, token: `Bearer ${token}`})
+            // 
             // return res.redirect('/' + user.handle);
         });
     })(req, res, next)
 
 })
 
-export interface Ipayload {
-    handle: string,
-    email: string,
-    id: string,
-}
 
 export default routers;
