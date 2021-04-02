@@ -14,7 +14,9 @@ routers.post('/signup', (req, res) => {
             if (user) {
                 res.status(404).json({ msg: `${req.body.email} already registered!` });
             } else {
-
+                if (!req.body.pass) {
+                    return res.status(400).json('no password entered')
+                }
                 const newUser = new User({
                     handle: req.body.username,
                     email: req.body.email,

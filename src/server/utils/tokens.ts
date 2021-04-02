@@ -6,7 +6,7 @@ export const createToken = (payLoad: Ipayload) => {
     return jwt.sign(
         payLoad,
         config.auth.secret,
-        { expiresIn: '1m' }
+        { expiresIn: config.auth.expiresIn }
     )
 }
 export interface Ipayload {

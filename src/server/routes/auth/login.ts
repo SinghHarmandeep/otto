@@ -8,6 +8,7 @@ const routers = Router();
 
 routers.post('/login', (req, res, next) => {
 
+    //i can put this method in it's own file and call it in between '/login', ^ , (req,res,next). at the up sign
     authenticate('local', (err, user, info) => {
         if (err) { return next(err); }
         if (!user) {
