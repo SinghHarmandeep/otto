@@ -9,7 +9,6 @@ export const createToken = (payLoad: Ipayload) => {
         { expiresIn: '1m' }
     )
 }
-
 export interface Ipayload {
     handle: string,
     email: string,

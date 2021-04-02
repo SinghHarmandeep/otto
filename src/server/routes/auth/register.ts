@@ -1,5 +1,6 @@
 import * as express from "express";
 
+import { createToken, Ipayload } from '../../utils/tokens';
 import { generateHash } from '../../utils/passwords';
 
 import User from '../../models/Users';
@@ -11,7 +12,7 @@ routers.post('/signup', (req, res) => {
     User.findOne({ email: req.body.email })
         .then(user => {
             if (user) {
-                res.status(404).json({ msg: `${req.body.email} used with an account already!` });
+                res.status(404).json({ msg: `${req.body.email} already registered!` });
             } else {
 
                 const newUser = new User({
@@ -24,8 +25,19 @@ routers.post('/signup', (req, res) => {
                 newUser.password = generateHash(req.body.pass)
 
                 newUser.save()
-                    .then(user => res.json({ msg: 'user created', user }))
-                    .catch(err => res.send(err))
+                    .then(user => {
+                        // jwt payload
+                        const payload: Ipayload = {
+                            handle: newUser.handle,
+                            email: newUser.email,
+                            id: newUser.id
+                        }
+                        let token = createToken(payload)
+                        res.json({
+                            msg: 'user created',
+                            token
+                        })
+                    }).catch(err => res.send(err))
             }
         })
 })
