@@ -6,8 +6,8 @@ import home from './Components/home';
 import error from './Components/pageNotFound';
 import about from './Components/about';
 import contact from './Components/contact';
-import login from './Components/login';
-import register from './Components/register';
+import login from './Components/auth/login';
+import register from './Components/auth/register';
 
 import Navbar from './Components/navbar';
 
