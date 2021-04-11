@@ -1,16 +1,34 @@
-import React from 'react';
+import React, { FormEvent } from 'react';
+import { request } from "../../utils/app";
 
+let d;
+let b;
 
 const contact = () => {
-    return(
+    return (
         <div className="container text-center">
             <h1>Contact us</h1>
-            <form action="varify()" method='POST'>
-                <input type="email" name="email" id="" placeholder='abc@abc.com'/>
-                <input type="file" name="inFile" id=""/>
+            <form
+                onSubmit={e => handleSubmit(e)} >
+                <input
+                    type="email"
+                    name="email"
+                    placeholder='abc@abc.com' />
+                <textarea
+                    rows={5}
+                    name="inFile" />
+                <input
+                    type="submit" />
             </form>
         </div>
     )
 }
+
+function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    request('/contact', 'POST',{gobi: 'sfdsfdsfd'} )
+    e.preventDefault()
+    
+}
+
 
 export default contact;

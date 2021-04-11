@@ -1,15 +1,15 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import ride from './Components/findRide';
-import home from './Components/home';
-import error from './Components/pageNotFound';
-import about from './Components/about';
-import contact from './Components/contact';
+import ride from './Components/shared/findRide';
+import home from './Components/shared/home';
+import error from './Components/public/pageNotFound';
+import about from './Components/public/about';
+import contact from './Components/public/contact';
 import login from './Components/auth/login';
 import register from './Components/auth/register';
 
-import Navbar from './Components/navbar';
+import Navbar from './Components/shared/navbar';
 
 const dd = () => {
     return (
