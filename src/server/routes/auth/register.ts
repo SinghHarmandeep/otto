@@ -37,7 +37,7 @@ routers.post('/signup', (req, res) => {
                         let token = createToken(payload)
                         res.json({
                             msg: 'user created',
-                            token
+                            token: `Bearer ${token}`
                         })
                     }).catch(err => res.send(err))
             }

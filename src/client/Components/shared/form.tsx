@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { FormEvent } from 'react';
+import { request } from "../../utils/app";
 
 import Map from './mapView';
 
 const form = () => {
     return (
         <div>
-            <form action='/../findride' method='POST'>
+            <form 
+            onSubmit={e => handleSubmit(e)}>
                 <div className="form-group container p-3 my-3 border rounded shadow">
                     <label>Pick up address:</label>
                     <input type="text" className="form-control" name="pickup" aria-describedby="emailHelp" placeholder="123 abc street" />
@@ -43,6 +45,13 @@ const form = () => {
 
         </div>
     )
+}
+
+function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    request('/findride', 'POST', {data: 'data sent is the following'})
+    console.log('sdfdsfsfsd');
+    
 }
 
 export default form;

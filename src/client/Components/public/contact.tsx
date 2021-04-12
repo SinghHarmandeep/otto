@@ -1,9 +1,6 @@
 import React, { FormEvent } from 'react';
 import { request } from "../../utils/app";
 
-let d;
-let b;
-
 const contact = () => {
     return (
         <div className="container text-center">
@@ -25,7 +22,7 @@ const contact = () => {
 }
 
 function handleSubmit(e: FormEvent<HTMLFormElement>) {
-    request('/contact', 'POST',{gobi: 'sfdsfdsfd'} )
+    request('/contact', 'POST' )
     e.preventDefault()
     
 }
