@@ -24,7 +24,7 @@ routers.post('/login', (req, res, next) => {
                 id: user.id
             }
             let token = createToken(payload)
-
+            
             res.json({ success: true, token: `Bearer ${token}` })
             // 
             // return res.redirect('/' + user.handle);

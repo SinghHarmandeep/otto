@@ -1,5 +1,5 @@
 import React, { FormEvent } from 'react';
-import { request } from '../../utils/app';
+import { request, setAuth } from '../../utils/app';
 
 class Login extends React.Component<Props, State> {
     constructor(props: any) {
@@ -19,7 +19,15 @@ class Login extends React.Component<Props, State> {
     }
 
     handleSubmit(e: FormEvent<HTMLFormElement>) {
-        request('../login', 'POST', {email: 'sdfdsfds', pass: '1234'})
+        console.log("before request");
+        
+        let d = request('../login', 'POST', {email: 'test1@gmail.com', pass: '1234'})
+        d.then((res)=>{
+            console.log(res);
+            setAuth(res.data.token)
+        })
+        console.log("after request");
+        e.preventDefault();
     }
 }
 
