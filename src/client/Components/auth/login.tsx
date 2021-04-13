@@ -21,10 +21,10 @@ class Login extends React.Component<Props, State> {
     handleSubmit(e: FormEvent<HTMLFormElement>) {
         console.log("before request");
         
-        let d = request('../login', 'POST', {email: 'test1@gmail.com', pass: '1234'})
+        let d = request('../login', 'POST', {email: 't@t.t', pass: '1234'})
         d.then((res)=>{
-            console.log(res);
             setAuth(res.data.token)
+            localStorage.setItem('token', res.data.token);
         })
         console.log("after request");
         e.preventDefault();

@@ -13,6 +13,8 @@ router.post('/findride',
         
         //user info after verifing
         let user = req.user
+        console.log(user);
+        
         res.status(201).json({order, user});
 
     })
