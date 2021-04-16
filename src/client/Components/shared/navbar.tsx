@@ -12,16 +12,21 @@ const navbar = () => {
     const history = useHistory();
 
     const [user, setUser] = useState(AccessToken);
-
+    console.log(user);
+    
     const handleLogout = () => {
         setUser(null);
-        localStorage.removeItem('token');
+        localStorage.clear();
         history.push('/')
     }
     let decodedUser: any;
     if (user) {
-        console.log(user);
-        decodedUser = jwtDecode(user)
+        console.log(user + "user here");
+        try {
+            decodedUser = jwtDecode(user)
+        } catch (error) {
+            console.log(error);
+        }
     }
     return (
         <Navbar bg="dark" variant="dark">
@@ -36,9 +41,9 @@ const navbar = () => {
             </Nav>
 
             {user ? (
-                <div>
-                    <Nav.Link className="my-2 my-sm-0 text-success" href="login">{decodedUser?.handle}</Nav.Link>
-                    <button className="my-2 my-sm-0 text-success" onClick={handleLogout} >Log out</button>
+                <div className="form-inline my-2 my-lg-0">
+                    <p className="my-2 my-sm-0 mr-3 text-success">{decodedUser?.handle}</p>
+                    <Nav.Link className="btn btn-outline-success my-2 my-sm-0" onClick={handleLogout} >Log out</Nav.Link>
                 </div>
             ) : (
                 <form className="form-inline my-2 my-lg-0">

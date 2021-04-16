@@ -1,6 +1,6 @@
 
 import React, { FormEvent } from 'react';
-import { request, setAuth } from "../../utils/app";
+import { request } from "../../utils/app";
 
 import Map from './mapView';
 
@@ -50,7 +50,7 @@ const form = () => {
 
 function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    setAuth(localStorage.getItem('token'))
+    // setAuth(localStorage.getItem('token'))
     let res = request('/findride', 'POST', {data: 'data sent is the following'})
     res.then(res => {
         console.log(res.data);

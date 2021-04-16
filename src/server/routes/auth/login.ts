@@ -14,7 +14,7 @@ routers.post('/login', (req, res, next) => {
         
         if (err) { return next(err); }
         if (!user) {
-            return res.json({ msg: 'Invalid email or password' })
+            return res.status(401).json({ msg: 'Invalid email or password' })
         }
         req.logIn(user, function (err) {
 
