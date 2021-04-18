@@ -12,7 +12,7 @@ const navbar = () => {
     const history = useHistory();
 
     const [user, setUser] = useState(AccessToken);
-    console.log(user);
+    // console.log(user);
     
     const handleLogout = () => {
         setUser(null);

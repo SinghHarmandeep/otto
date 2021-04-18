@@ -2,6 +2,10 @@ import axios, { Method } from 'axios';
 
 export let AccessToken: string = localStorage.getItem('token') || null;
 
+export let setAccessToken =(token: string) => {
+    localStorage.setItem('token', token);
+}
+
 export let User: any = {
     userid: localStorage.getItem('userid') || null
 }
