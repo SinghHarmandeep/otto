@@ -12,6 +12,7 @@ import Register from './Components/auth/register';
 import Navbar from './Components/shared/navbar';
 
 const dd = () => {
+    //state lifting, need inplementation
     const [logedin, setLogedin] = useState(false);
     return (
         <Router>
