@@ -3,6 +3,7 @@ import { RouteComponentProps } from 'react-router-dom'
 import { request, setAccessToken } from '../../utils/app';
 
 import { useHistory } from 'react-router-dom';
+import jwtDecode from 'jwt-decode';
 class Login extends React.Component<ILoginProps, ILoginState> {
     constructor(props: any) {
         super(props)
@@ -37,17 +38,21 @@ class Login extends React.Component<ILoginProps, ILoginState> {
         alert(msg)
     }
 
-    handleSubmit(e: FormEvent<HTMLFormElement>) {
+     handleSubmit(e: FormEvent<HTMLFormElement>) {
         e.preventDefault();
 
         try {
             let d = request('../login', 'POST', { email: this.state.email, pass: this.state.password })
-            d.then((res) => {
+            d.then( async (res) => {
                 // setAuth(res.data.token)
                 // console.log(res);
 
                 if (res.data.token) {
+                    //on success
                     setAccessToken(res.data.token)
+                    let resDecode: any = jwtDecode(res.data.token);
+                    console.log(resDecode);
+                    
                     this.props.history.push('/')
                 } else {
                     this.showAlert('invelid credintials')
