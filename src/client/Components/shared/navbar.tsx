@@ -1,33 +1,41 @@
 import React, { useEffect, useState } from "react";
 import { useHistory, useLocation } from 'react-router-dom'
-
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav'
+import { Navbar, Nav } from 'react-bootstrap';
 
 import { AccessToken, setAccessToken } from '../../utils/app'
 import jwtDecode from "jwt-decode";
 
-const navbar = () => {
+const navbar = (props: navProps) => {
 
     const history = useHistory();
     const location = useLocation()
+    // console.log(location);
 
+    console.log(props.arr[0]);
+
+    
     const [user, setUser] = useState(AccessToken);
-    // console.log(user);
-
-    // useEffect(() => {
-    //     setUser(AccessToken);
-    // }, [location])
+    
+    useEffect(() => {
+        if (props.arr[0]) {
+            console.log('updating state' + AccessToken + localStorage.getItem('token'));
+            //for some odd reason Accesstoken wouldn't get updated!
+            setUser(localStorage.getItem('token'))
+        }
+    }, [location])
+    
+    console.log(user + "---user is");
 
     const handleLogout = () => {
         setUser(null);
         localStorage.clear();
+        props.arr[1](false);
         history.push('/')
     }
-    
+
     let decodedUser: any;
-    if(user) {
-        console.log(user + "user here");
+    if (user) {
+        // console.log(user + "user here");
         try {
             decodedUser = jwtDecode(user)
         } catch (error) {
@@ -62,6 +70,11 @@ const navbar = () => {
             }
         </Navbar >
     )
+}
+
+// export interface navProps extends RouteComponentProps{
+export interface navProps {
+    arr: any
 }
 
 export default navbar;

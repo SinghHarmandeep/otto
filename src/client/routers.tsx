@@ -1,28 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import ride from './Components/shared/findRide';
-import home from './Components/shared/home';
-import error from './Components/public/pageNotFound';
-import about from './Components/public/about';
-import contact from './Components/public/contact';
-import login from './Components/auth/login';
-import register from './Components/auth/register';
+import Ride from './Components/shared/findRide';
+import Home from './Components/shared/home';
+import Error from './Components/public/pageNotFound';
+import About from './Components/public/about';
+import Contact from './Components/public/contact';
+import Login from './Components/auth/login';
+import Register from './Components/auth/register';
 
 import Navbar from './Components/shared/navbar';
 
 const dd = () => {
+    const [logedin, setLogedin] = useState(false);
     return (
         <Router>
-                <Navbar />
+            <Navbar arr={[logedin, setLogedin]} />
             <Switch>
-                <Route exact path = '/findride' component = {ride} />
-                <Route exact path = '/about' component = {about} />
-                <Route exact path = '/contact' component = {contact} />
-                <Route exact path = '/login' component = {login} />
-                <Route exact path = '/signup' component = {register} />
-                <Route exact path = '/' component = {home} />
-                <Route path = '/*' component = {error} />
+                <Route exact path='/findride' component={Ride} />
+                <Route exact path='/about' component={About} />
+                <Route exact path='/contact' component={Contact} />
+                {/* <Route exact path = '/login' component = {login is=setLogedin} /> */}
+                {/* <Route exact path = "/"><Movies logo = {logo} /></Route> for fucntionalComponents */}
+                <Route exact path='/login' render={props => (<Login setLog={setLogedin} {...props} />)} />
+                <Route exact path='/signup' component={Register} />
+                <Route exact path='/' component={Home} />
+                <Route path='/*' component={Error} />
             </Switch>
         </Router>
     )

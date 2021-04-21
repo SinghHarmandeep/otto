@@ -42,8 +42,8 @@ class Login extends React.Component<ILoginProps, ILoginState> {
         e.preventDefault();
 
         try {
-            let d = request('../login', 'POST', { email: this.state.email, pass: this.state.password })
-            d.then( async (res) => {
+            let req = request('../login', 'POST', { email: this.state.email, pass: this.state.password })
+            req.then( async (res) => {
                 // setAuth(res.data.token)
                 // console.log(res);
 
@@ -51,8 +51,8 @@ class Login extends React.Component<ILoginProps, ILoginState> {
                     //on success
                     setAccessToken(res.data.token)
                     let resDecode: any = jwtDecode(res.data.token);
-                    console.log(resDecode);
-                    
+                    // console.log(resDecode);
+                    this.props.setLog(true)
                     this.props.history.push('/')
                 } else {
                     this.showAlert('invelid credintials')
@@ -70,7 +70,7 @@ class Login extends React.Component<ILoginProps, ILoginState> {
 }
 
 interface ILoginProps extends RouteComponentProps {
-    arr: []
+    setLog: any
 }
 
 interface ILoginState {
