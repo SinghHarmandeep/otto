@@ -21,6 +21,7 @@ const home = () => {
                 <br></br>
                 <Link type="button" className="btn btn-primary col-12" to='/findride'>Let's get to it</Link>
             </h1>
+            <footer className="text-center" > &copy; Copyright 2021 OTTO. All rights reserved.</footer>
         </div>
 
     )
