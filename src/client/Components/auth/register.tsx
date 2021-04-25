@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import React from 'react';
 
 class Register extends React.Component<Props, State> {
@@ -6,7 +7,7 @@ class Register extends React.Component<Props, State> {
     }
     render() {
         return (
-            <div className= 'container'>
+            <div className='container'>
                 <h1>Register</h1>
                 <form action="../signup" method='POST'>
                     <label htmlFor="username">Username</label>
@@ -18,10 +19,15 @@ class Register extends React.Component<Props, State> {
                     <label htmlFor="pass">Password</label>
                     <input type="password" name='pass' placeholder='********' />
                     <br /><br />
+                    <label htmlFor="pass">Confirm Password</label>
+                    <input type="password" name='re-pass' placeholder='********' />
+                    <br /><br />
                     <label htmlFor="phone">Phone no:</label>
                     <input type="number" name="phone" placeholder='123456789' />
                     <br /><br />
-                    <button type="submit" className="btn btn-primary col-12">Submit</button>
+                    <button type="submit" className="btn btn-primary col-12">Sign Up</button>
+                    <br /><br />
+                    <Link to="/login" className="text-dark">Have an account? <b> Sing In </b></Link>
                 </form>
             </div>
         )
@@ -29,14 +35,14 @@ class Register extends React.Component<Props, State> {
 }
 
 interface Props {
-    arr : []
-  }
-  
-  interface State {
-      username: String,
-      password: String,
-      email: String,
-      number: number
-  }
+    arr: []
+}
+
+interface State {
+    username: String,
+    password: String,
+    email: String,
+    number: number
+}
 
 export default Register

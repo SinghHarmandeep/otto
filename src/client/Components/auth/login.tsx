@@ -1,8 +1,7 @@
 import React, { FormEvent } from 'react';
-import { RouteComponentProps } from 'react-router-dom'
+import { Link, RouteComponentProps } from 'react-router-dom'
 import { request, setAccessToken } from '../../utils/app';
 
-import { useHistory } from 'react-router-dom';
 import jwtDecode from 'jwt-decode';
 class Login extends React.Component<ILoginProps, ILoginState> {
     constructor(props: any) {
@@ -18,17 +17,28 @@ class Login extends React.Component<ILoginProps, ILoginState> {
                 <h1>LogIn page</h1>
                 <form onSubmit={e => this.handleSubmit(e)}>
 
-                    <input type="text" name="email"
-                        value={this.state.email}
-                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => this.setState({ email: e.target.value })}
-                        placeholder='Cockroach' />
+                    <div className="form-group row">
+                        <label htmlFor="email" className="col-sm-2 col-form-label">Email</label>
+                        <div className='col-sm-10'>
+                            <input type="text" name="email" className='form-control'
+                                value={this.state.email}
+                                onChange={(e: React.ChangeEvent<HTMLInputElement>) => this.setState({ email: e.target.value })}
+                                placeholder='Cockroach' />
+                        </div>
+                    </div>
 
-                    <input type="password" name='pass'
-                        value={this.state.password}
-                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => this.setState({ password: e.target.value })}
-                        placeholder='keep it long' />
-
-                    <button type="submit" className="btn btn-primary col-12">Submit</button>
+                    <div className="form-group row">
+                        <label htmlFor="password" className="col-sm-2 col-form-label">Password</label>
+                        <div className='col-sm-10'>
+                            <input type="password" name='pass' className='form-control'
+                                value={this.state.password}
+                                onChange={(e: React.ChangeEvent<HTMLInputElement>) => this.setState({ password: e.target.value })}
+                                placeholder='keep it long' />
+                        </div>
+                    </div>
+                    <button type="submit" className="btn btn-primary col-12">Login</button>
+                    <br /><br />
+                    <Link to="/signup" className="text-dark text-center">Don't have an account? <b> Sing Up </b></Link>
                 </form>
             </div>
         )
@@ -38,12 +48,12 @@ class Login extends React.Component<ILoginProps, ILoginState> {
         alert(msg)
     }
 
-     handleSubmit(e: FormEvent<HTMLFormElement>) {
+    handleSubmit(e: FormEvent<HTMLFormElement>) {
         e.preventDefault();
 
         try {
             let req = request('../login', 'POST', { email: this.state.email, pass: this.state.password })
-            req.then( async (res) => {
+            req.then(async (res) => {
                 // setAuth(res.data.token)
                 // console.log(res);
 
