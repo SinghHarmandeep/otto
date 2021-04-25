@@ -11,20 +11,20 @@ const navbar = (props: navProps) => {
     const location = useLocation()
     // console.log(location);
 
-    console.log(props.arr[0]);
+    // console.log(props.arr[0]);
 
     
     const [user, setUser] = useState(AccessToken);
     
     useEffect(() => {
         if (props.arr[0]) {
-            console.log('updating state' + AccessToken + localStorage.getItem('token'));
+            // console.log('updating state' + AccessToken + localStorage.getItem('token'));
             //for some odd reason Accesstoken wouldn't get updated!
             setUser(localStorage.getItem('token'))
         }
     }, [location])
     
-    console.log(user + "---user is");
+    // console.log(user + "---user is");
 
     const handleLogout = () => {
         setUser(null);
