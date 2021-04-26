@@ -21,22 +21,24 @@ class Register extends React.Component<Props, State> {
             username: this.state.username,
             email: this.state.email,
             pass: this.state.pass,
-            repass: this.state.repass,
+            // repass: this.state.repass,
             phone: this.state.number
         })
         req.then(async (res) => {
             // setAuth(res.data.token)
-            // console.log(res);
+            console.log(res);
+            console.log('request came back');
+            
 
-            if (res.data.token) {
-                //on success
-                console.log(res.data.token);
+            // if (res.data.token) {
+            //     //on success
+            //     console.log(res.data.token);
                 
-            } else {
-                console.log('invalid credintials');
+            // } else {
+            //     console.log('invalid credintials');
                 
-                // this.showAlert('invelid credintials')
-            }
+            //     // this.showAlert('invelid credintials')
+            // }
 
         }).catch((err) => {
             console.log('error occured');
