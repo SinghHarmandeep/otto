@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useHistory, useLocation } from 'react-router-dom'
 import { Navbar, Nav } from 'react-bootstrap';
 
-import { AccessToken, setAccessToken } from '../../utils/app'
+import { AccessToken } from '../../utils/app'
 import jwtDecode from "jwt-decode";
 
 const navbar = (props: navProps) => {
