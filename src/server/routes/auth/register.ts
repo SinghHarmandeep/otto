@@ -9,7 +9,7 @@ const routers = express.Router();
 
 routers.post('/signup', (req, res) => {
 
-    console.log(req.body);
+    // console.log(req.body);
 
     try {
 

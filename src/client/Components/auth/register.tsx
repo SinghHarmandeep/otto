@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, RouteComponentProps } from "react-router-dom";
 import React, { FormEvent } from 'react';
 
 import { request, setAccessToken } from '../../utils/app';
@@ -16,6 +16,10 @@ class Register extends React.Component<Props, State> {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    showAlert(msg: string) {
+        alert(msg)
+    }
+
     handleSubmit(e: FormEvent<HTMLFormElement>) {
         let req = request('../signup', 'POST', {
             username: this.state.username,
@@ -30,15 +34,15 @@ class Register extends React.Component<Props, State> {
             console.log('request came back');
             
 
-            // if (res.data.token) {
-            //     //on success
-            //     console.log(res.data.token);
-                
-            // } else {
-            //     console.log('invalid credintials');
-                
-            //     // this.showAlert('invelid credintials')
-            // }
+            if (res.data.token) {
+                //on success
+                setAccessToken(res.data.token)
+                this.props.setLog(true)
+                this.props.history.push('/')
+            } else {
+                //server sent back json error msg
+                this.showAlert(res.data.msg)
+            }
 
         }).catch((err) => {
             console.log('error occured');
@@ -112,8 +116,8 @@ class Register extends React.Component<Props, State> {
     }
 }
 
-interface Props {
-    arr: []
+interface Props extends RouteComponentProps {
+    setLog: any
 }
 
 interface State {
