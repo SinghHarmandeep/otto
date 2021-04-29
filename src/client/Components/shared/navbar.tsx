@@ -13,9 +13,9 @@ const navbar = (props: navProps) => {
 
     // console.log(props.arr[0]);
 
-    
+
     const [user, setUser] = useState(AccessToken);
-    
+
     useEffect(() => {
         if (props.arr[0]) {
             // console.log('updating state' + AccessToken + localStorage.getItem('token'));
@@ -23,7 +23,7 @@ const navbar = (props: navProps) => {
             setUser(localStorage.getItem('token'))
         }
     }, [location])
-    
+
     // console.log(user + "---user is");
 
     const handleLogout = () => {
@@ -49,7 +49,12 @@ const navbar = (props: navProps) => {
             <Nav className="mr-auto">
                 <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="features">Features</Nav.Link>
-                <Nav.Link href="findride">Find RHM</Nav.Link>
+
+                {(user) && 
+                    <div className="form-inline my-2 my-lg-0">
+                        <Nav.Link href="findride">Find RHM</Nav.Link>
+                    </div>
+                }
                 <Nav.Link href="about">About OTTO</Nav.Link>
                 <Nav.Link href="pricing">Pricing</Nav.Link>
                 <Nav.Link href="contact">Contact Us</Nav.Link>

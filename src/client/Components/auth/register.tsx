@@ -38,7 +38,7 @@ class Register extends React.Component<Props, State> {
                 //on success
                 setAccessToken(res.data.token)
                 this.props.setLog(true)
-                this.props.history.push('/')
+                this.props.history.push('/findride')
             } else {
                 //server sent back json error msg
                 this.showAlert(res.data.msg)
@@ -109,7 +109,7 @@ class Register extends React.Component<Props, State> {
                     </div>
                     <button type="submit" className="btn btn-primary col-12">Sign Up</button>
                     <br /><br />
-                    <Link to="/login" className="text-dark">Have an account? <b> Sing In </b></Link>
+                    <Link to="/login" className="text-light">Have an account? <b> Sing In </b></Link>
                 </form>
             </div>
         )

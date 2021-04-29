@@ -38,7 +38,7 @@ class Login extends React.Component<ILoginProps, ILoginState> {
                     </div>
                     <button type="submit" className="btn btn-primary col-12">Login</button>
                     <br /><br />
-                    <Link to="/signup" className="text-dark text-center">Don't have an account? <b> Sing Up </b></Link>
+                    <Link to="/signup" className="text-light">Don't have an account? <b> Sing Up </b></Link>
                 </form>
             </div>
         )
@@ -63,7 +63,7 @@ class Login extends React.Component<ILoginProps, ILoginState> {
                     let resDecode: any = jwtDecode(res.data.token);
                     // console.log(resDecode);
                     this.props.setLog(true)
-                    this.props.history.push('/')
+                    this.props.history.push('/findride')
                 } else {
                     this.showAlert('invelid credintials')
                 }
