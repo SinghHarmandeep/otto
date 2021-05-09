@@ -10,10 +10,14 @@ import Login from './Components/auth/login';
 import Register from './Components/auth/register';
 
 import Navbar from './Components/shared/navbar';
+import { getAccessToken, setAuth } from './utils/app';
 
 const dd = () => {
     //state lifting, need inplementation
     const [logedin, setLogedin] = useState(false);
+    console.log('setting auth');
+    
+    setAuth(getAccessToken());
     return (
         <Router>
             <Navbar arr={[logedin, setLogedin]} />

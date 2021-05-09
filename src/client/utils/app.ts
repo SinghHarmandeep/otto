@@ -22,7 +22,6 @@ export const setAuth = (token: string) => {
 
 export const request = async <T = any>(uri: string, method: Method = 'GET', body?: {}) => {
 
-    setAuth(getAccessToken());
     return await axios({
         url: uri,
         method: method,
