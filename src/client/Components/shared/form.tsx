@@ -7,8 +7,7 @@ import Map from './mapView';
 const form = () => {
     return (
         <div>
-            <form 
-            onSubmit={e => handleSubmit(e)}>
+            <form onSubmit={e => handleSubmit(e)}>
                 <div className="form-group container p-3 my-3 border rounded shadow">
                     <label>Pick up address:</label>
                     <input type="text" className="form-control" name="pickup" aria-describedby="emailHelp" placeholder="123 abc street" />

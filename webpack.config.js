@@ -52,11 +52,7 @@ const clientConfig = {
     devtool: 'inline-source-map',
     optimization: {
         minimize: true,
-        minimizer: [new TerserPlugin(
-            {
-                extractComments: false, //true to preserve comments
-            }
-        )],
+        minimizer: [new TerserPlugin({extractComments: false, })],
     },
     module: {
         rules: [

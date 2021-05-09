@@ -1,8 +1,10 @@
 import axios, { Method } from 'axios';
 
-export let AccessToken: string = localStorage.getItem('token') || null;
+// export let AccessToken: string = localStorage.getItem('token') || null;
 
-export let setAccessToken =(token: string) => {
+export let getAccessToken = () => localStorage.getItem('token') || null;
+
+export let setAccessToken = (token: string) => {
     localStorage.setItem('token', token);
 }
 
@@ -10,16 +12,17 @@ export let User: any = {
     userid: localStorage.getItem('userid') || null
 }
 
-// export const setAuth = (token: string) => {
-//     if (token) {
-//         axios.defaults.headers.common["Authorization"] = token
-//     } else {
-//         delete axios.defaults.headers.common["Authorization"]
-//     }
-// }
+export const setAuth = (token: string) => {
+    if (token) {
+        axios.defaults.headers.common["Authorization"] = token
+    } else {
+        delete axios.defaults.headers.common["Authorization"]
+    }
+}
 
 export const request = async <T = any>(uri: string, method: Method = 'GET', body?: {}) => {
 
+    setAuth(getAccessToken());
     return await axios({
         url: uri,
         method: method,

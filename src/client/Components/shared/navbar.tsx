@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useHistory, useLocation } from 'react-router-dom'
 import { Navbar, Nav } from 'react-bootstrap';
 
-import { AccessToken } from '../../utils/app'
+import { getAccessToken } from '../../utils/app'
 import jwtDecode from "jwt-decode";
 
 const navbar = (props: navProps) => {
@@ -13,14 +13,14 @@ const navbar = (props: navProps) => {
 
     // console.log(props.arr[0]);
 
-
-    const [user, setUser] = useState(AccessToken);
+    
+    const [user, setUser] = useState(getAccessToken());
 
     useEffect(() => {
         if (props.arr[0]) {
             // console.log('updating state' + AccessToken + localStorage.getItem('token'));
             //for some odd reason Accesstoken wouldn't get updated!
-            setUser(localStorage.getItem('token'))
+            setUser(getAccessToken())
         }
     }, [location])
 
