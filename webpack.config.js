@@ -1,9 +1,16 @@
 const path = require('path');
 const nodeExternals = require('webpack-node-externals');
 
+const TerserPlugin = require("terser-webpack-plugin");
+
+
 const serverConfig = {
     mode: process.env.NODE_ENV || 'development',
     entry: './src/server/server.ts',
+    optimization: {
+        minimize: true,
+        minimizer: [new TerserPlugin()],
+    },
     module: {
         rules: [
             {
@@ -43,6 +50,14 @@ const clientConfig = {
     mode: process.env.NODE_ENV || 'development',
     entry: './src/client/index.tsx',
     devtool: 'inline-source-map',
+    optimization: {
+        minimize: true,
+        minimizer: [new TerserPlugin(
+            {
+                extractComments: false, //true to preserve comments
+            }
+        )],
+    },
     module: {
         rules: [
             {
