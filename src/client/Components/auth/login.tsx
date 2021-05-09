@@ -53,7 +53,7 @@ class Login extends React.Component<ILoginProps, ILoginState> {
 
         try {
             let req = request('../login', 'POST', { email: this.state.email, pass: this.state.password })
-            req.then(async (res) => {
+            req.then((res) => {
                 // setAuth(res.data.token)
                 // console.log(res);
 

@@ -15,8 +15,7 @@ import { getAccessToken, setAuth } from './utils/app';
 const dd = () => {
     //state lifting, need inplementation
     const [logedin, setLogedin] = useState(false);
-    console.log('setting auth');
-    
+
     setAuth(getAccessToken());
     return (
         <Router>

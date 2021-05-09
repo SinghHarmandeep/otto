@@ -53,9 +53,15 @@ function handleSubmit(e: FormEvent<HTMLFormElement>) {
     let res = request('/findride', 'POST', {data: 'data sent is the following'})
     res.then(res => {
         console.log(res.data);
-        
+    }).catch(err => {
+        console.log(err);
+        showAlert('you must be logedin to make this request!')
     });
     
+}
+
+function showAlert(msg: string) {
+    alert(msg)
 }
 
 export default form;
