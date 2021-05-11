@@ -15,8 +15,8 @@ const mapView = (props: Iprops) => {
     
 
     let zoom: number = 7
-    let url: string = `https://www.google.com/maps/embed/v1/directions?key=AIzaSyAebtXR13OqX48gqs4XqPckmWLglqZGmIo&origin=Oslo+Norway
-    &destination=Telemark+Norway&zoom=${zoom}`
+    let url: string = `https://www.google.com/maps/embed/v1/directions?key=AIzaSyAebtXR13OqX48gqs4XqPckmWLglqZGmIo&origin=${props.orig}
+    &destination=${props.dest}&zoom=${zoom}`
 
     return (
         <div
