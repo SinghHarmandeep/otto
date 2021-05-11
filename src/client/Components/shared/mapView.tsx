@@ -9,7 +9,10 @@ const mapStyle = {
     // zIndex: 1000
 }
 
-const mapView = () => {
+const mapView = (props: Iprops) => {
+
+    console.log(props);
+    
 
     let zoom: number = 7
     let url: string = `https://www.google.com/maps/embed/v1/directions?key=AIzaSyAebtXR13OqX48gqs4XqPckmWLglqZGmIo&origin=Oslo+Norway
@@ -42,6 +45,10 @@ const mapView = () => {
     )
 }
 
+export interface Iprops {
+    orig: string,
+    dest: string
+}
 
 
 export default mapView;

@@ -1,17 +1,21 @@
 
-import React, { FormEvent } from 'react';
+import React, { FormEvent, useState } from 'react';
 import { request } from "../../utils/app";
 
 import Map from './mapView';
 
 const form = () => {
+
+    const [origin, setOrigin] = useState('');
+    const [dest, setDest] = useState('');
     return (
         <div className='container'>
             <div className='row'>
                 <form onSubmit={e => handleSubmit(e)} className='col'>
                     <div className="form-group container p-3 my-3 border rounded shadow">
                         <label>Pick up address:</label>
-                        <input type="text" className="form-control" name="pickup" aria-describedby="emailHelp" placeholder="123 abc street" />
+                        <input type="text" className="form-control" value={origin} name="pickup"
+                        onChange={e => {setOrigin(e.target.value)}} placeholder="123 pickup street" />
                         <small id="emailHelp" className="form-text text-muted">We'll never share your pickup address with anyone else.</small>
                     </div>
                     <div className="form-group container p-3 my-3 border rounded shadow">
@@ -20,7 +24,7 @@ const form = () => {
                     </div>
                     <div className="form-group container p-3 my-3 border rounded shadow">
                         <label>Drop off address:</label>
-                        <input type="text" className="form-control" name="dropoff" aria-describedby="emailHelp" placeholder="123 abc street" />
+                        <input type="text" className="form-control" value={dest} name="dropoff" onChange={e=>{setDest(e.target.value)} } placeholder="123 drop street" />
                         <small id="emailHelp" className="form-text text-muted">We'll never share your drop off with anyone else.</small>
                     </div>
                     <div className='container p-3 my-3 border rounded shadow'>
@@ -40,7 +44,7 @@ const form = () => {
                     <button type="submit" className="btn btn-primary col-12">Let's go!</button>
                 </form>
                 <div className='col'>
-                    <Map />
+                    <Map orig={origin} dest={dest}/>
                 </div>
             </div>
 
