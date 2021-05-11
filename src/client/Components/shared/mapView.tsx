@@ -11,7 +11,7 @@ const mapStyle = {
 
 const mapView = (props: Iprops) => {
 
-    console.log(props);
+
     
 
     let zoom: number = 7
