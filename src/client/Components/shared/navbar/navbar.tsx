@@ -40,7 +40,6 @@ const navbar = (props: navProps) => {
         }
     }
 
-    console.log(Style);
     return (
 
         <Navbar bg="dark" variant="dark" style={Style}>
