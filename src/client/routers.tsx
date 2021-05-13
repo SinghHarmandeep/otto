@@ -20,17 +20,18 @@ const dd = () => {
     return (
         <Router>
             <Navbar arr={[logedin, setLogedin]} />
-            <Switch>
-                <Route exact path='/findride' component={Ride} />
-                <Route exact path='/about' component={About} />
-                <Route exact path='/contact' component={Contact} />
-                {/* <Route exact path = '/login' component = {login is=setLogedin} /> */}
-                {/* <Route exact path = "/"><Movies logo = {logo} /></Route> for fucntionalComponents */}
-                <Route exact path='/login' render={props => (<Login setLog={setLogedin} {...props} />)} />
-                <Route exact path='/signup' render={props => (<Register setLog={setLogedin} {...props} />)} />
-                <Route exact path='/' component={Home} />
-                <Route path='/*' component={Error} />
-            </Switch>
+
+                <Switch>
+                    <Route exact path='/findride' component={Ride} />
+                    <Route exact path='/about' component={About} />
+                    <Route exact path='/contact' component={Contact} />
+                    {/* <Route exact path = '/login' component = {login is=setLogedin} /> */}
+                    {/* <Route exact path = "/"><Movies logo = {logo} /></Route> for fucntionalComponents */}
+                    <Route exact path='/login' render={props => (<Login setLog={setLogedin} {...props} />)} />
+                    <Route exact path='/signup' render={props => (<Register setLog={setLogedin} {...props} />)} />
+                    <Route exact path='/' component={Home} />
+                    <Route path='/*' component={Error} />
+                </Switch>
         </Router>
     )
 }

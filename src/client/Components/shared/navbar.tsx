@@ -13,7 +13,6 @@ const navbar = (props: navProps) => {
 
     // console.log(props.arr[0]);
 
-    
     const [user, setUser] = useState(getAccessToken());
 
     useEffect(() => {
@@ -44,17 +43,19 @@ const navbar = (props: navProps) => {
     }
 
     return (
-        <Navbar bg="dark" variant="dark">
+        <Navbar bg="dark" variant="dark"
+            style={{
+                width: '100%',
+                top: 0,
+                position: 'sticky',
+                zIndex:1
+            }}
+            >
             <Navbar.Brand href="/">Otto</Navbar.Brand>
-            <Nav className="mr-auto">
+            <Nav className='mr-auto'>
                 <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="features">Features</Nav.Link>
-
-                {(user) && 
-                    <div className="form-inline my-2 my-lg-0">
-                        <Nav.Link href="findride">Find RHM</Nav.Link>
-                    </div>
-                }
+                {(user) && <Nav.Link href="findride">Find RHM</Nav.Link>}
                 <Nav.Link href="about">About OTTO</Nav.Link>
                 <Nav.Link href="pricing">Pricing</Nav.Link>
                 <Nav.Link href="contact">Contact Us</Nav.Link>
