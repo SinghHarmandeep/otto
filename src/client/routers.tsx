@@ -9,7 +9,7 @@ import Contact from './Components/public/contact';
 import Login from './Components/auth/login';
 import Register from './Components/auth/register';
 
-import Navbar from './Components/shared/navbar';
+import Navbar from './Components/shared/navbar/navbar';
 import { getAccessToken, setAuth } from './utils/app';
 
 const dd = () => {
@@ -20,7 +20,6 @@ const dd = () => {
     return (
         <Router>
             <Navbar arr={[logedin, setLogedin]} />
-
                 <Switch>
                     <Route exact path='/findride' component={Ride} />
                     <Route exact path='/about' component={About} />

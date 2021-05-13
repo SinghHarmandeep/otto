@@ -2,7 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useHistory, useLocation } from 'react-router-dom'
 import { Navbar, Nav } from 'react-bootstrap';
 
-import { getAccessToken } from '../../utils/app'
+import { Style } from './navStyle'
+
+import { getAccessToken } from '../../../utils/app'
 import jwtDecode from "jwt-decode";
 
 const navbar = (props: navProps) => {
@@ -17,13 +19,9 @@ const navbar = (props: navProps) => {
 
     useEffect(() => {
         if (props.arr[0]) {
-            // console.log('updating state' + AccessToken + localStorage.getItem('token'));
-            //for some odd reason Accesstoken wouldn't get updated!
             setUser(getAccessToken())
         }
     }, [location])
-
-    // console.log(user + "---user is");
 
     const handleLogout = () => {
         setUser(null);
@@ -42,15 +40,10 @@ const navbar = (props: navProps) => {
         }
     }
 
+    console.log(Style);
     return (
-        <Navbar bg="dark" variant="dark"
-            style={{
-                width: '100%',
-                top: 0,
-                position: 'sticky',
-                zIndex:1
-            }}
-            >
+
+        <Navbar bg="dark" variant="dark" style={Style}>
             <Navbar.Brand href="/">Otto</Navbar.Brand>
             <Nav className='mr-auto'>
                 <Nav.Link href="/">Home</Nav.Link>
