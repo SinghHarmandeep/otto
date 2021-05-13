@@ -41,19 +41,6 @@ const form = () => {
                             </div>
                         </div>
                     </div>
-
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
                     <button type="submit" className="btn btn-primary col-12">Let's go!</button>
                 </form>
 
