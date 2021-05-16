@@ -31,8 +31,6 @@ class Register extends React.Component<Props, State> {
         req.then(async (res) => {
             // setAuth(res.data.token)
             console.log(res);
-            console.log('request came back');
-            
 
             if (res.data.token) {
                 //on success
@@ -58,9 +56,9 @@ class Register extends React.Component<Props, State> {
                 <form onSubmit={e => this.handleSubmit(e)}>
 
                     {/* username */}
-                    <div className="form-group row">
-                        <label htmlFor="username" className="col-sm-2 col-form-label">Username</label>
-                        <div className='col-sm-10'>
+                    <div className="row justify-content-center form-group">
+                        <label htmlFor="username" className="col-sm-2 col-form-label">Username:</label>
+                        <div className='col-sm-4'>
                             <input type="text" name="username" placeholder='Almighty' className='form-control'
                                 value={this.state.username}
                                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => this.setState({ username: e.target.value })}
@@ -68,9 +66,9 @@ class Register extends React.Component<Props, State> {
                         </div>
                     </div>
                     {/* email */}
-                    <div className="form-group row">
+                    <div className="row justify-content-center form-group">
                         <label htmlFor="email" className="col-sm-2 col-form-label">Email:</label>
-                        <div className='col-sm-10'>
+                        <div className='col-sm-4'>
                             <input type="email" name="email" placeholder='takeit@drop.off' className='form-control'
                                 value={this.state.email}
                                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => this.setState({ email: e.target.value })}
@@ -78,9 +76,9 @@ class Register extends React.Component<Props, State> {
                         </div>
                     </div>
                     {/* password */}
-                    <div className="form-group row">
-                        <label htmlFor="pass" className="col-sm-2 col-form-label">Password</label>
-                        <div className='col-sm-10'>
+                    <div className="row justify-content-center form-group">
+                        <label htmlFor="pass" className="col-sm-2 col-form-label">Password:</label>
+                        <div className='col-sm-4'>
                             <input type="password" name='pass' placeholder='********' className='form-control'
                                 value={this.state.pass}
                                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => this.setState({ pass: e.target.value })}
@@ -88,9 +86,9 @@ class Register extends React.Component<Props, State> {
                         </div>
                     </div>
                     {/* re-enter pass */}
-                    <div className="form-group row">
-                        <label htmlFor="pass" className="col-sm-2 col-form-label">Confirm Password</label>
-                        <div className='col-sm-10'>
+                    <div className="row justify-content-center form-group">
+                        <label htmlFor="pass" className="col-sm-2 col-form-label">Confirm Password:</label>
+                        <div className='col-sm-4'>
                             <input type="password" name='re-pass' placeholder='********' className='form-control'
                                 value={this.state.repass}
                                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => this.setState({ repass: e.target.value })}
@@ -98,16 +96,18 @@ class Register extends React.Component<Props, State> {
                         </div>
                     </div>
                     {/* phone number */}
-                    <div className="form-group row">
+                    <div className="row justify-content-center form-group">
                         <label htmlFor="phone" className="col-sm-2 col-form-label">Phone no:</label>
-                        <div className='col-sm-10'>
+                        <div className='col-sm-4'>
                             <input type="number" name="phone" placeholder='123456789' className='form-control'
                                 value={this.state.number}
                                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => this.setState({ number: e.target.value })}
                             />
                         </div>
                     </div>
-                    <button type="submit" className="btn btn-primary col-12">Sign Up</button>
+                    <div className="row justify-content-center form-group">
+                        <button type="submit" className="btn btn-primary col-6">Sign Up</button>
+                    </div>
                     <br /><br />
                     <Link to="/login" className="text-light">Have an account? <b> Sing In </b></Link>
                 </form>
