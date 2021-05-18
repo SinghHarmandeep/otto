@@ -108,7 +108,6 @@ class Register extends React.Component<Props, State> {
                     <div className="row justify-content-center form-group">
                         <button type="submit" className="btn btn-primary col-6">Sign Up</button>
                     </div>
-                    <br /><br />
                     <Link to="/login" className="text-light">Have an account? <b> Sing In </b></Link>
                 </form>
             </div>

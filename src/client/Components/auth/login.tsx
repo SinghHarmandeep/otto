@@ -17,9 +17,9 @@ class Login extends React.Component<ILoginProps, ILoginState> {
                 <h1>LogIn page</h1>
                 <form onSubmit={e => this.handleSubmit(e)}>
 
-                    <div className="form-group row">
+                <div className="row justify-content-center form-group">
                         <label htmlFor="email" className="col-sm-2 col-form-label">Email</label>
-                        <div className='col-sm-10'>
+                        <div className='col-sm-4'>
                             <input type="text" name="email" className='form-control'
                                 value={this.state.email}
                                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => this.setState({ email: e.target.value })}
@@ -27,17 +27,19 @@ class Login extends React.Component<ILoginProps, ILoginState> {
                         </div>
                     </div>
 
-                    <div className="form-group row">
+                    <div className="row justify-content-center form-group">
                         <label htmlFor="password" className="col-sm-2 col-form-label">Password</label>
-                        <div className='col-sm-10'>
+                        <div className='col-sm-4'>
                             <input type="password" name='pass' className='form-control'
                                 value={this.state.password}
                                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => this.setState({ password: e.target.value })}
                                 placeholder='keep it long' />
                         </div>
                     </div>
-                    <button type="submit" className="btn btn-primary col-12">Login</button>
-                    <br /><br />
+                    <div className="row justify-content-center form-group">
+
+                    <button type="submit" className="btn btn-primary col-6">Login</button>
+                    </div>
                     <Link to="/signup" className="text-light">Don't have an account? <b> Sing Up </b></Link>
                 </form>
             </div>
