@@ -12,22 +12,22 @@ const form = () => {
         <div className='container'>
             <div className='row'>
                 <form onSubmit={e => handleSubmit(e)} className='col'>
-                    <div className="form-group container p-3 my-3 border rounded shadow">
+                    <div className="form-group container p-3 my-3 shadow">
                         <label>Pick up address:</label>
                         <input type="text" className="form-control" value={origin} name="pickup"
                             onChange={e => { setOrigin(e.target.value) }} placeholder="123 pickup street" />
                         <small id="emailHelp" className="form-text text-muted">We'll never share your pickup address with anyone else.</small>
                     </div>
-                    <div className="form-group container p-3 my-3 border rounded shadow">
+                    <div className="form-group container p-3 my-3 shadow">
                         <label >Item Discription</label>
                         <input type="text" className="form-control" name="item" placeholder="Book, Keys, Food, package etc" />
                     </div>
-                    <div className="form-group container p-3 my-3 border rounded shadow">
+                    <div className="form-group container p-3 my-3 shadow">
                         <label>Drop off address:</label>
                         <input type="text" className="form-control" value={dest} name="dropoff" onChange={e => { setDest(e.target.value) }} placeholder="123 drop street" />
                         <small id="emailHelp" className="form-text text-muted">We'll never share your drop off with anyone else.</small>
                     </div>
-                    <div className='container p-3 my-3 border rounded shadow'>
+                    <div className='container p-3 my-3 shadow'>
                         <div className="form-group row">
                             <label className="col-2 col-form-label">Date</label>
                             <div className="col-10">

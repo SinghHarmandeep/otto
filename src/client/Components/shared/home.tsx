@@ -1,8 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
+import { getAccessToken } from '../../utils/app';
 
 
 const home = () => {
+
     return (
         <div className='container' >
             <h1 className='d-flex justify-content-center'>Making deliveries accessable!</h1>
@@ -16,10 +18,13 @@ const home = () => {
                 <li className="list-group-item text-dark">3. Choose dropoff location</li>
             </ul>
             <h1 >
-                Horrary that's all. Now you pay us for the exclusive service and we
-                deliver your item in real time, yes you heard it right real time!
+                Yay that's all. Now you pay us for the exclusive service and we
+                deliver your item in real time!
                 <br></br>
-                <Link type="button" className="btn btn-primary col-12" to='/findride'>Let's get to it</Link>
+                <form action={(getAccessToken()) ? '/findride' : '/login'}>
+
+                    <button type='submit' className="btn btn-primary col-12">Let's get to it</button>
+                </form>
             </h1>
             <footer className="text-center" > &copy; Copyright 2021 OTTO. All rights reserved.</footer>
         </div>
