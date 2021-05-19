@@ -44,16 +44,18 @@ const form = () => {
                     <button type="submit" className="btn btn-primary col-12">Let's go!</button>
                 </form>
 
-                <div className='col' style={{
-                    position: 'absolute'
-                    left: '0px'
-                    top: '0px'
-                    width: '100%'
-                    height: '100%'
-                    zIndex: -1,
-                    // backgroundColor: '#212529'
-                    backgroundColor: 'blue'
-                }}>
+                <div
+                    style={{
+                        position: 'absolute' as 'absolute',
+                        left: '0px',
+                        top: '0px',
+                        width: '100%',
+                        height: '100%',
+                        zIndex: -1,
+                        backgroundColor: '#212529',
+                        // backgroundColor: 'blue',
+                        overflowY: 'hidden'
+                    }}>
                     <Map orig={(origin) ? origin : 'new york'} dest={(dest) ? dest : 'new york'} />
                 </div>
             </div>
