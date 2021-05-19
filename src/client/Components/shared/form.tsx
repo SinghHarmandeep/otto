@@ -46,7 +46,8 @@ const form = () => {
 
                 <div
                     style={{
-                        position: 'absolute' as 'absolute',
+                        // position: 'absolute' as 'absolute',
+                        position: 'fixed',
                         left: '0px',
                         top: '0px',
                         width: '100%',
