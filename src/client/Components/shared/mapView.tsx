@@ -12,6 +12,9 @@ const mapView = (props: Iprops) => {
             width="100%"
             height='100%'
             loading="lazy"
+            style={{
+
+            }}
             src={url}
         >
 
