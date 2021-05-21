@@ -12,18 +12,18 @@ const form = () => {
         <div className='col-4 bg-dark mx-2 rounded shadow-lg'>
             <form onSubmit={e => handleSubmit(e)} className='my-2'>
 
-                <label>Pick up address:</label>
+                <label className="mt-2">Pick up address:</label>
                 <input type="text" className="form-control" value={origin} name="pickup"
                     onChange={e => { setOrigin(e.target.value) }} placeholder="123 pickup street" />
 
-                <label >Item Discription</label>
+                <label className="mt-2">Item Discription:</label>
                 <input type="text" className="form-control" name="item" placeholder="Book, Keys, Food, package etc" />
 
 
-                <label>Drop off address:</label>
+                <label className="mt-2">Drop off address:</label>
                 <input type="text" className="form-control" value={dest} name="dropoff" onChange={e => { setDest(e.target.value) }} placeholder="123 drop street" />
 
-                <div className="row">
+                <div className="row mt-2">
                     <div className='col'>
                         <label>Date:</label>
                         <input className="form-control col" type="date" name="pickupdate" />
