@@ -9,38 +9,39 @@ const form = () => {
     const [origin, setOrigin] = useState('');
     const [dest, setDest] = useState('');
     return (
-        <div className='' style={{ color: 'black' }}>
+        <div className='border col-4'
+        // style={{ color: 'black' }}
+        >
             <div>
 
                 <form onSubmit={e => handleSubmit(e)} className=''>
-                    <div className="form-group col">
-                        <label>Pick up address:</label>
-                        <input type="text" className="form-control col-4" value={origin} name="pickup"
-                            onChange={e => { setOrigin(e.target.value) }} placeholder="123 pickup street" />
-                        <small id="emailHelp" className="form-text text-muted">We'll never share your pickup address with anyone else.</small>
-                    </div>
-                    <div className="form-group col p-3 my-3 ">
-                        <label >Item Discription</label>
-                        <input type="text" className="form-control col-4" name="item" placeholder="Book, Keys, Food, package etc" />
-                    </div>
-                    <div className="form-group col p-3 my-3 ">
-                        <label>Drop off address:</label>
-                        <input type="text" className="form-control col-4" value={dest} name="dropoff" onChange={e => { setDest(e.target.value) }} placeholder="123 drop street" />
-                        <small id="emailHelp" className="form-text text-muted">We'll never share your drop off with anyone else.</small>
-                    </div>
-                    <div className='form-group col p-3 my-3 '>
-                        <div className="col form-group row">
+
+                    <label>Pick up address:</label>
+                    <input type="text" className="form-control" value={origin} name="pickup"
+                        onChange={e => { setOrigin(e.target.value) }} placeholder="123 pickup street" />
+                    <small id="emailHelp" className="form-text text-muted">We'll never share your pickup address with anyone else.</small>
+
+
+                    <label >Item Discription</label>
+                    <input type="text" className="form-control" name="item" placeholder="Book, Keys, Food, package etc" />
+
+
+                    <label>Drop off address:</label>
+                    <input type="text" className="form-control" value={dest} name="dropoff" onChange={e => { setDest(e.target.value) }} placeholder="123 drop street" />
+                    <small id="emailHelp" className="form-text text-muted">We'll never share your drop off with anyone else.</small>
+
+                    <div className="row">
+                        <div className='col'>
                             <label>Date:</label>
-                            <input className="form-control col-2" type="date" name="pickupdate" />
+                            <input className="form-control col" type="date" name="pickupdate" />
                         </div>
-                        <div>
-                            <label >Time: </label>
-                            <input className="form-control col-2" type="time" name="pickuptime" />
+
+                        <div className='col'>
+                            <label>Time:</label>
+                            <input className="form-control col" type="time" name="pickuptime" />
                         </div>
                     </div>
-                    <div className='form-group col p-3 my-3'>
-                        <button type="submit" className="btn btn-primary col-4">Let's go!</button>
-                    </div>
+                    <button type="submit" className="btn btn-primary col my-2">Let's go!</button>
                 </form>
 
                 <div
