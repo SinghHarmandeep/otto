@@ -9,45 +9,36 @@ const form = () => {
     const [origin, setOrigin] = useState('');
     const [dest, setDest] = useState('');
     return (
-        <div className='border col-4'
-        style={{ color: 'black' }}
-        >
-            <div>
+        <div className='col-4 bg-dark mx-2 rounded shadow-lg'>
+            <form onSubmit={e => handleSubmit(e)} className='my-2'>
 
-                <form onSubmit={e => handleSubmit(e)} className=''>
+                <label>Pick up address:</label>
+                <input type="text" className="form-control" value={origin} name="pickup"
+                    onChange={e => { setOrigin(e.target.value) }} placeholder="123 pickup street" />
 
-                    <label>Pick up address:</label>
-                    <input type="text" className="form-control" value={origin} name="pickup"
-                        onChange={e => { setOrigin(e.target.value) }} placeholder="123 pickup street" />
-                    <small id="emailHelp" className="form-text text-muted">We'll never share your pickup address with anyone else.</small>
+                <label >Item Discription</label>
+                <input type="text" className="form-control" name="item" placeholder="Book, Keys, Food, package etc" />
 
 
-                    <label >Item Discription</label>
-                    <input type="text" className="form-control" name="item" placeholder="Book, Keys, Food, package etc" />
+                <label>Drop off address:</label>
+                <input type="text" className="form-control" value={dest} name="dropoff" onChange={e => { setDest(e.target.value) }} placeholder="123 drop street" />
 
-
-                    <label>Drop off address:</label>
-                    <input type="text" className="form-control" value={dest} name="dropoff" onChange={e => { setDest(e.target.value) }} placeholder="123 drop street" />
-                    <small id="emailHelp" className="form-text text-muted">We'll never share your drop off with anyone else.</small>
-
-                    <div className="row">
-                        <div className='col'>
-                            <label>Date:</label>
-                            <input className="form-control col" type="date" name="pickupdate" />
-                        </div>
-
-                        <div className='col'>
-                            <label>Time:</label>
-                            <input className="form-control col" type="time" name="pickuptime" />
-                        </div>
+                <div className="row">
+                    <div className='col'>
+                        <label>Date:</label>
+                        <input className="form-control col" type="date" name="pickupdate" />
                     </div>
-                    <button type="submit" className="btn btn-primary col my-2">Let's go!</button>
-                </form>
 
-                <div
-                    style={mapStyle}>
-                    <Map orig={(origin) ? origin : 'new york'} dest={(dest) ? dest : 'new york'} />
+                    <div className='col'>
+                        <label>Time:</label>
+                        <input className="form-control col" type="time" name="pickuptime" />
+                    </div>
                 </div>
+                <button type="submit" className="btn btn-primary col my-2">Let's go!</button>
+            </form>
+
+            <div style={mapStyle}>
+                <Map orig={(origin) ? origin : 'new york'} dest={(dest) ? dest : 'new york'} />
             </div>
 
         </div>

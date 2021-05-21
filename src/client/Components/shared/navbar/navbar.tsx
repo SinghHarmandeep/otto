@@ -46,10 +46,10 @@ const navbar = (props: navProps) => {
             <Navbar.Brand href="/">Otto</Navbar.Brand>
             <Nav className='mr-auto'>
                 <Nav.Link href="/">Home</Nav.Link>
-                <Nav.Link href="features">Features</Nav.Link>
                 {(user) && <Nav.Link href="findride">Find RHM</Nav.Link>}
                 <Nav.Link href="about">About OTTO</Nav.Link>
                 <Nav.Link href="contact">Contact Us</Nav.Link>
+                <Nav.Link href="features">Features</Nav.Link>
             </Nav>
 
             {user ? (
