@@ -10,7 +10,7 @@ const form = () => {
     const [dest, setDest] = useState('');
     return (
         <div className='border col-4'
-        // style={{ color: 'black' }}
+        style={{ color: 'black' }}
         >
             <div>
 
