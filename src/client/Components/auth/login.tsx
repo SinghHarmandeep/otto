@@ -1,6 +1,6 @@
 import React, { FormEvent } from 'react';
 import { Link, RouteComponentProps } from 'react-router-dom'
-import { request, setAccessToken } from '../../utils/app';
+import { request, setAccessToken, getAccessToken } from '../../utils/app';
 
 import jwtDecode from 'jwt-decode';
 class Login extends React.Component<ILoginProps, ILoginState> {
@@ -11,6 +11,13 @@ class Login extends React.Component<ILoginProps, ILoginState> {
             password: ''
         }
     }
+
+    componentDidMount() {
+        if (getAccessToken()) {
+            this.props.history.push('/')
+        }
+    }
+
     render() {
         return (
             <div className='container'>

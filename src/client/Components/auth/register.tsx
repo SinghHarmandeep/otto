@@ -1,7 +1,7 @@
 import { Link, RouteComponentProps } from "react-router-dom";
 import React, { FormEvent } from 'react';
 
-import { request, setAccessToken } from '../../utils/app';
+import { getAccessToken, request, setAccessToken } from '../../utils/app';
 
 class Register extends React.Component<Props, State> {
     constructor(props: any) {
@@ -18,6 +18,11 @@ class Register extends React.Component<Props, State> {
 
     showAlert(msg: string) {
         alert(msg)
+    }
+    componentDidMount() {
+        if (getAccessToken()) {
+            this.props.history.push('/')
+        }
     }
 
     handleSubmit(e: FormEvent<HTMLFormElement>) {
