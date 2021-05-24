@@ -52,7 +52,7 @@ class Register extends React.Component<Props, State> {
     render() {
         return (
             <div className='container'>
-                    <h1 className="text-center">Register</h1>
+                <h1 className="text-center">Register</h1>
                 <form onSubmit={e => this.handleSubmit(e)}>
 
                     {/* username */}
@@ -98,7 +98,10 @@ class Register extends React.Component<Props, State> {
                     <div className="row justify-content-center form-group">
                         <button type="submit" className="btn btn-primary col-6">Sign Up</button>
                     </div>
-                    <Link to="/login" className="text-light">Have an account? <b> Sing In </b></Link>
+                    <div className="row justify-content-center form-group">
+
+                        <Link to="/login" className="text-light">Have an account? <b> Sing In </b></Link>
+                    </div>
                 </form>
             </div>
         )
