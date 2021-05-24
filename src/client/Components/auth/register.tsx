@@ -52,58 +52,48 @@ class Register extends React.Component<Props, State> {
     render() {
         return (
             <div className='container'>
-                <h1>Register</h1>
+                    <h1 className="text-center">Register</h1>
                 <form onSubmit={e => this.handleSubmit(e)}>
 
                     {/* username */}
                     <div className="row justify-content-center form-group">
                         <label htmlFor="username" className="col-sm-2 col-form-label">Username:</label>
-                        <div className='col-sm-4'>
-                            <input type="text" name="username" placeholder='Almighty' className='form-control'
-                                value={this.state.username}
-                                onChange={(e: React.ChangeEvent<HTMLInputElement>) => this.setState({ username: e.target.value })}
-                            />
-                        </div>
+                        <input type="text" name="username" placeholder='Almighty' className='form-control col-4'
+                            value={this.state.username}
+                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => this.setState({ username: e.target.value })}
+                        />
                     </div>
                     {/* email */}
                     <div className="row justify-content-center form-group">
                         <label htmlFor="email" className="col-sm-2 col-form-label">Email:</label>
-                        <div className='col-sm-4'>
-                            <input type="email" name="email" placeholder='takeit@drop.off' className='form-control'
-                                value={this.state.email}
-                                onChange={(e: React.ChangeEvent<HTMLInputElement>) => this.setState({ email: e.target.value })}
-                            />
-                        </div>
+                        <input type="email" name="email" placeholder='takeit@drop.off' className='form-control col-4'
+                            value={this.state.email}
+                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => this.setState({ email: e.target.value })}
+                        />
                     </div>
                     {/* password */}
                     <div className="row justify-content-center form-group">
                         <label htmlFor="pass" className="col-sm-2 col-form-label">Password:</label>
-                        <div className='col-sm-4'>
-                            <input type="password" name='pass' placeholder='********' className='form-control'
-                                value={this.state.pass}
-                                onChange={(e: React.ChangeEvent<HTMLInputElement>) => this.setState({ pass: e.target.value })}
-                            />
-                        </div>
+                        <input type="password" name='pass' placeholder='********' className='form-control col-4'
+                            value={this.state.pass}
+                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => this.setState({ pass: e.target.value })}
+                        />
                     </div>
                     {/* re-enter pass */}
                     <div className="row justify-content-center form-group">
                         <label htmlFor="pass" className="col-sm-2 col-form-label">Confirm Password:</label>
-                        <div className='col-sm-4'>
-                            <input type="password" name='re-pass' placeholder='********' className='form-control'
-                                value={this.state.repass}
-                                onChange={(e: React.ChangeEvent<HTMLInputElement>) => this.setState({ repass: e.target.value })}
-                            />
-                        </div>
+                        <input type="password" name='re-pass' placeholder='********' className='form-control col-4'
+                            value={this.state.repass}
+                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => this.setState({ repass: e.target.value })}
+                        />
                     </div>
                     {/* phone number */}
                     <div className="row justify-content-center form-group">
                         <label htmlFor="phone" className="col-sm-2 col-form-label">Phone no:</label>
-                        <div className='col-sm-4'>
-                            <input type="number" name="phone" placeholder='123456789' className='form-control'
-                                value={this.state.number}
-                                onChange={(e: React.ChangeEvent<HTMLInputElement>) => this.setState({ number: e.target.value })}
-                            />
-                        </div>
+                        <input type="number" name="phone" placeholder='123456789' className='form-control col-4'
+                            value={this.state.number}
+                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => this.setState({ number: e.target.value })}
+                        />
                     </div>
                     <div className="row justify-content-center form-group">
                         <button type="submit" className="btn btn-primary col-6">Sign Up</button>
