@@ -26,7 +26,7 @@ const home = () => {
                     <button type='submit' className="btn btn-primary col-12">Let's get to it</button>
                 </form>
             </h1>
-            <footer className="text-center" > &copy; Copyright 2021 OTTO. All rights reserved.</footer>
+            <footer className="text-center" > &copy; Copyright 2021 Harmandeep Singh. All rights reserved.</footer>
         </div>
 
     )
