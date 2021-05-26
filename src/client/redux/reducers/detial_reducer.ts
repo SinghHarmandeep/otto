@@ -1,5 +1,5 @@
 
-const detialReducer = (state = {pickUp: '', dropOff: ''}, action) => {
+const detialReducer = (state = {pickUp: '', dropOff: ''}, action: any) => {
     Object.freeze(state);
     let newState = Object.assign({}, state);
     switch (action.type) {
