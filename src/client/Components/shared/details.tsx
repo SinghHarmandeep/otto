@@ -8,21 +8,14 @@ class Details extends React.Component<IDetailsProps> {
 
 
     render() {
-        // console.log(this.props.orgn + "this is it");
-        // console.log(this.props.dest);
-
-        // return (
-        //     <h1>{this.props.dest}</h1>
-        // );
         return (
             <form
-                onSubmit={e => this.props.submit(e)} 
+                onSubmit={e => this.props.submit(e)}
                 className='my-2'>
 
                 <label className="mt-2">Pick up address:</label>
                 <input type="text" className="form-control"
-                    // value={this.props.orgn}
-                    name="pickup"
+                    value={this.props.orgn} name="pickup"
                     onChange={e => { this.props.pickUp(e.target.value) }} placeholder="123 pickup street" />
 
                 <label className="mt-2">Item Discription:</label>
@@ -31,8 +24,7 @@ class Details extends React.Component<IDetailsProps> {
 
                 <label className="mt-2">Drop off address:</label>
                 <input type="text" className="form-control"
-                    // value={this.props.dest}
-                    name="dropoff"
+                    value={this.props.dest} name="dropoff"
                     onChange={e => { this.props.dropOff(e.target.value) }} placeholder="123 drop street" />
 
                 <div className="row mt-2">

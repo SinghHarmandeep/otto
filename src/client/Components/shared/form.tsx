@@ -5,11 +5,7 @@ import { request } from "../../utils/app";
 import Map from './mapView';
 import Detials from './details'
 
-// const form = (props: any) => {
-
 class Form extends React.Component<IFormProps, IFormState> {
-    // const [origin, setOrigin] = useState('');
-    // const [dest, setDest] = useState('');
 
     constructor(props: any) {
         super(props);
@@ -47,10 +43,12 @@ class Form extends React.Component<IFormProps, IFormState> {
     dropOff = (val: string) => this.setState({ dest: val })
 
     handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-
         e.preventDefault()
         // setAuth(localStorage.getItem('token'))
-        let res = request('/findride', 'POST', { data: 'data sent is the following' })
+        let res = request('/findride', 'POST', 
+        { data: {
+
+        } })
         res.then(res => {
             console.log(res.data);
         }).catch(err => {
