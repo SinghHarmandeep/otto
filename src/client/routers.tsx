@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import Ride from './Components/shared/findRide';
+import Ride from './Components/shared/findRide/findRide';
 import Home from './Components/shared/home';
 import Error from './Components/public/pageNotFound';
 import About from './Components/public/about';

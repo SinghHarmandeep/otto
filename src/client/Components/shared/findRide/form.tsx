@@ -1,6 +1,6 @@
 
 import React, { FormEvent, useState } from 'react';
-import { request } from "../../utils/app";
+import { request } from "../../../utils/app";
 
 import Map from './mapView';
 import Detials from './details'
@@ -75,8 +75,6 @@ const mapStyle = {
     // backgroundColor: 'blue',
     overflowY: 'hidden' as 'hidden'
 }
-
-
 
 interface IFormState {
     orgn: string,
