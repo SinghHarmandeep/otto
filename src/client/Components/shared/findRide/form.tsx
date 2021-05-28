@@ -45,10 +45,13 @@ class Form extends React.Component<IFormProps, IFormState> {
     handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         // setAuth(localStorage.getItem('token'))
-        let res = request('/findride', 'POST', 
-        { data: {
-
-        } })
+        let res = request('/findride', 'POST',
+            {
+                data: {
+                    pickup: this.state.orgn,
+                    dropoff: this.state.dest
+                }
+            })
         res.then(res => {
             console.log(res.data);
         }).catch(err => {

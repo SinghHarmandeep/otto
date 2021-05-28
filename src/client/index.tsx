@@ -11,6 +11,5 @@ const gobi = document.getElementById(`gobi`)
 ReactDom.render(
     <Provider store={Store} >
         <App />
-    </Provider>
-    ,
+    </Provider>,
     gobi)

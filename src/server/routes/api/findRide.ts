@@ -9,6 +9,7 @@ router.post('/findride',
     (req, res) => {
         //data from request
         let order = req.body;
+        console.log(order);
         
         //user info after verifing
         let user = req.user
