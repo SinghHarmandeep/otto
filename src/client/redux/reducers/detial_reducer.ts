@@ -5,10 +5,10 @@ const detialReducer = (state = { pickUp: '', dropOff: '' }, action: any) => {
     let newState = Object.assign({}, state);
     switch (action.type) {
         case ADD_PICKUP:
-            newState.pickUp = action.pickUp;
+            newState.pickUp = action.payload.pickUp;
             return newState;
         case ADD_DROPOFF:
-            newState.dropOff = action.dropOff;
+            newState.dropOff = action.payload.dropOff;
             return newState;
         default:
             return state;
