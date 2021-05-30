@@ -41,8 +41,9 @@ const navbar = (props: navProps) => {
     }
 
     return (
-
-        <Navbar className="shadow" variant="dark" style={Style}>
+        <Navbar bg="dark"
+            variant="dark"
+            style={Style}>
             <Navbar.Brand href="/">Otto</Navbar.Brand>
             <Nav className='mr-auto'>
                 <Nav.Link href="/">Home</Nav.Link>
