@@ -11,11 +11,20 @@ class Form extends React.Component<IFormProps, IFormState> {
         super(props);
         this.state = {
             orgn: '',
-            dest: ''
+            dest: '',
+            key: ''
         }
     }
-    render() {
 
+    componentDidMount() {
+        let res = request('../getapi', 'GET');
+        res.then(res => {
+            this.setState({key: res.data})
+        }).catch(err => console.log(err))
+    }
+
+
+    render() {
         return (
             <div className='col-4 bg-dark mx-2 rounded shadow-lg' >
                 < Detials
@@ -29,9 +38,9 @@ class Form extends React.Component<IFormProps, IFormState> {
                     <Map
                         orig={(this.state.orgn) ? this.state.orgn : 'new york'}
                         dest={(this.state.dest) ? this.state.dest : 'new york'}
+                        apiKey={this.state.key}
                     />
                 </div>
-
             </div>
         )
     }
@@ -79,7 +88,8 @@ const mapStyle = {
 
 interface IFormState {
     orgn: string,
-    dest: string
+    dest: string,
+    key: string
 }
 interface IFormProps {
 
