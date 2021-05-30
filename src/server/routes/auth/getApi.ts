@@ -6,7 +6,7 @@ import config from '../../config'
 import { authenticate } from 'passport';
 
 router.get('/getapi',
-    // authenticate('jwt'),
+    authenticate('jwt'),
     (req, res) => {
         res.status(202).send(config.GMapAPI)
     })

@@ -6,13 +6,8 @@ import { request } from '../../../utils/app';
 const mapView = (props: Iprops) => {
 
     let zoom: number = 7;
-
-
     let url: string = `https://www.google.com/maps/embed/v1/directions?key=${props.apiKey}&origin=${props.orig}
     &destination=${props.dest}&zoom=${zoom}`
-
-
-
 
     return (
         <iframe

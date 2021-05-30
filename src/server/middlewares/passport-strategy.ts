@@ -63,8 +63,6 @@ export const configurePassport = (app: Application) => {
     passport.use(new passportJWT.Strategy(
         options,
         (jwt_paylode, done) => {
-            console.log('inmiddleware');
-            
             try {
                 done(null, jwt_paylode)
             } catch (error) {

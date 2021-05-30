@@ -23,7 +23,6 @@ class Form extends React.Component<IFormProps, IFormState> {
         }).catch(err => console.log(err))
     }
 
-
     render() {
         return (
             <div className='col-4 bg-dark mx-2 rounded shadow-lg' >
