@@ -15,11 +15,9 @@ class Form extends React.Component<IFormProps, IFormState> {
         }
     }
     render() {
-        console.log(this.state);
 
         return (
             <div className='col-4 bg-dark mx-2 rounded shadow-lg' >
-
                 < Detials
                     dest={this.state.dest}
                     orgn={this.state.orgn}

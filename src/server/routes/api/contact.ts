@@ -9,7 +9,7 @@ router.post('/contact',
         let recipt = req.body;
         console.log(recipt);
         
-        res.status(201).json({msg: 'contact sent',recipt});
+        res.status(202).json({msg: 'contact sent',recipt});
 
     })
 

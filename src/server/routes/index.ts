@@ -6,8 +6,10 @@ import auth from './auth/'
 
 const router = express.Router();
 
-router.use(api)
+
+//oreder in which routs are placed matters alwarys rememebr that
 router.use(auth)
+router.use(api)
 
 
 export default router;

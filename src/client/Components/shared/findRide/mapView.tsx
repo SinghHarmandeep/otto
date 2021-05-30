@@ -1,10 +1,19 @@
 import React from 'react';
+import { request } from '../../../utils/app';
 
 
 const mapView = (props: Iprops) => {
 
+
+    let res = request('../getapi', 'GET');
+    res.then(res => console.log(res)
+    ).catch(err => console.log('found an errorrrr')
+    )
+
+    let key = null;
+
     let zoom: number = 7
-    let url: string = `https://www.google.com/maps/embed/v1/directions?key=AIzaSyDKe5rMchKpvr1eP9523FAAwF9nIMh2M8E&origin=${props.orig}
+    let url: string = `https://www.google.com/maps/embed/v1/directions?key=${key}&origin=${props.orig}
     &destination=${props.dest}&zoom=${zoom}`
 
     return (

@@ -7,8 +7,8 @@ import contact from "./contact";
 const router = express.Router();
 
 
-router.use(clientEnd)
 router.use(findRide)
 router.use(contact)
+router.use(clientEnd)
 
 export default router;
