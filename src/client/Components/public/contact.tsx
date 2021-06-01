@@ -38,22 +38,23 @@ const contact = () => {
                     Send
                 </button>
             </div>
+            <p className= 'invisible'>message recieved</p>
         </form >
     </div >
-    return (
-        contactForm
-    )
     function handleSubmit(e: FormEvent<HTMLFormElement>) {
         let res = request('/contact', 'POST',
             { email, phone, msg }
         )
         res.then(res => {
-                contactForm = <p>message recieved</p>
+            setMsg(res.data);
         }).catch(err => {
-                contactForm = <p>error occured in the server</p>
+            contactForm = <p>error occured in the server</p>
         })
-        // e.preventDefault()
+        e.preventDefault()
     }
+    return (
+        contactForm
+    )
 }
 
 
