@@ -45,7 +45,7 @@ class Login extends React.Component<ILoginProps, ILoginState> {
                         <button type="submit" className="btn btn-primary col-5">Login</button>
                     </div>
                     <div className="row justify-content-center form-group">
-                        <Link to="/signup" className="text-light">Don't have an account? <b> Sing Up </b></Link>
+                        <Link to="/signup" className="text-light">Don't have an account? <b> Sign Up </b></Link>
                     </div>
                 </form>
             </div>

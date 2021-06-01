@@ -105,7 +105,7 @@ class Register extends React.Component<Props, State> {
                     </div>
                     <div className="row justify-content-center form-group">
 
-                        <Link to="/login" className="text-light">Have an account? <b> Sing In </b></Link>
+                        <Link to="/login" className="text-light">Have an account? <b> Sign In </b></Link>
                     </div>
                 </form>
             </div>
