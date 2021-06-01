@@ -1,5 +1,5 @@
 
-import React, { FormEvent, useState } from 'react';
+import React, { FormEvent } from 'react';
 import { request } from "../../../utils/app";
 
 import Map from './mapView';

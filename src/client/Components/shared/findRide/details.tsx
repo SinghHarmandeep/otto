@@ -6,7 +6,6 @@ class Details extends React.Component<IDetailsProps> {
         this.state = null;
     }
 
-
     render() {
         return (
             <form

@@ -1,7 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import { request } from '../../../utils/app';
-
-
+import React from 'react';
 
 const mapView = (props: Iprops) => {
 
