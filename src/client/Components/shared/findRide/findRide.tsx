@@ -13,7 +13,8 @@ class FindRide extends React.Component<IFormProps, IFormState> {
         this.state = {
             orgn: '',
             dest: '',
-            key: ''
+            key: '',
+            item: ''
         }
     }
 
@@ -41,8 +42,10 @@ class FindRide extends React.Component<IFormProps, IFormState> {
                             < Detials
                                 dest={this.state.dest}
                                 orgn={this.state.orgn}
-                                pickUp={this.pickUp}
-                                dropOff={this.dropOff}
+                                item={this.state.item}
+                                setItem={this.setItem}
+                                setPickUp={this.setPickUp}
+                                setDropOff={this.setDropOff}
                                 submit={this.handleSubmit}
                             />
                             <div style={mapStyle}>
@@ -59,9 +62,9 @@ class FindRide extends React.Component<IFormProps, IFormState> {
         )
     }
 
-
-    pickUp = (val: string) => this.setState({ orgn: val })
-    dropOff = (val: string) => this.setState({ dest: val })
+    setItem = (val: string) => this.setState({ item: val })
+    setPickUp = (val: string) => this.setState({ orgn: val })
+    setDropOff = (val: string) => this.setState({ dest: val })
 
     handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault()
@@ -70,7 +73,8 @@ class FindRide extends React.Component<IFormProps, IFormState> {
             {
                 data: {
                     pickup: this.state.orgn,
-                    dropoff: this.state.dest
+                    dropoff: this.state.dest,
+                    item: this.state.item
                 }
             })
         res.then(res => {
@@ -103,7 +107,8 @@ const mapStyle = {
 interface IFormState {
     orgn: string,
     dest: string,
-    key: string
+    key: string,
+    item: string
 }
 interface IFormProps extends RouteComponentProps {
 
