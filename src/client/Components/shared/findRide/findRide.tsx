@@ -41,7 +41,7 @@ class FindRide extends React.Component<IFormProps, IFormState> {
                     <div>
                         <h1 className='text-center text-dark'>Get your Right Hand Man</h1 >
                         <p className='text-center text-dark'>Enter Package Details</p>
-                        <div className='col-4 bg-dark mx-2 rounded shadow-lg' >
+                        <div className='col-4 bg-dark mx-2 rounded shadow-lg' style={{ position: 'relative' }} >
                             < Detials
                                 dest={this.state.dest}
                                 orgn={this.state.orgn}
@@ -57,13 +57,22 @@ class FindRide extends React.Component<IFormProps, IFormState> {
                                 setTime={this.setTime}
                                 submit={this.handleSubmit}
                             />
-                            <div style={mapStyle}>
-                                <Map
-                                    orig={(this.state.orgn) ? this.state.orgn : 'new york'}
-                                    dest={(this.state.dest) ? this.state.dest : 'new york'}
-                                    apiKey={this.state.key}
-                                />
+                            <div style={{ position: 'absolute', right: '3px', top: '60px', pointerEvents: 'none' }}>
+                                <svg width="6" height="100">
+                                    <line x1="0" y1="0" x2="0" y2="100"
+                                        stroke='white'
+                                        strokeDasharray="5,5"
+                                        stroke-width="6" />
+                                </svg>
+
                             </div>
+                        </div>
+                        <div style={mapStyle}>
+                            <Map
+                                orig={(this.state.orgn) ? this.state.orgn : 'new york'}
+                                dest={(this.state.dest) ? this.state.dest : 'new york'}
+                                apiKey={this.state.key}
+                            />
                         </div>
                     </div >)
                 }
