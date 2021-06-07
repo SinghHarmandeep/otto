@@ -14,7 +14,10 @@ class FindRide extends React.Component<IFormProps, IFormState> {
             orgn: '',
             dest: '',
             key: '',
-            item: ''
+            item: '',
+            inst: '',
+            date: '',
+            time: ''
         }
     }
 
@@ -33,7 +36,7 @@ class FindRide extends React.Component<IFormProps, IFormState> {
         return (
             <div>
                 {(!getAccessToken()) ? (
-                    <div></div>
+                    <div />
                 ) : (
                     <div>
                         <h1 className='text-center text-dark'>Get your Right Hand Man</h1 >
@@ -43,9 +46,15 @@ class FindRide extends React.Component<IFormProps, IFormState> {
                                 dest={this.state.dest}
                                 orgn={this.state.orgn}
                                 item={this.state.item}
+                                inst={this.state.inst}
+                                time={this.state.time}
+                                date={this.state.date}
                                 setItem={this.setItem}
                                 setPickUp={this.setPickUp}
                                 setDropOff={this.setDropOff}
+                                setInst={this.setInst}
+                                setDate={this.setDate}
+                                setTime={this.setTime}
                                 submit={this.handleSubmit}
                             />
                             <div style={mapStyle}>
@@ -63,6 +72,9 @@ class FindRide extends React.Component<IFormProps, IFormState> {
     }
 
     setItem = (val: string) => this.setState({ item: val })
+    setTime = (val: string) => this.setState({ time: val })
+    setDate = (val: string) => this.setState({ date: val })
+    setInst = (val: string) => this.setState({ inst: val })
     setPickUp = (val: string) => this.setState({ orgn: val })
     setDropOff = (val: string) => this.setState({ dest: val })
 
@@ -74,7 +86,10 @@ class FindRide extends React.Component<IFormProps, IFormState> {
                 data: {
                     pickup: this.state.orgn,
                     dropoff: this.state.dest,
-                    item: this.state.item
+                    item: this.state.item,
+                    inst: this.state.inst,
+                    date: this.state.date,
+                    time: this.state.time
                 }
             })
         res.then(res => {
@@ -88,7 +103,6 @@ class FindRide extends React.Component<IFormProps, IFormState> {
     showAlert = (msg: string) => {
         alert(msg)
     }
-
 }
 
 const mapStyle = {
@@ -103,15 +117,15 @@ const mapStyle = {
     // backgroundColor: 'blue',
     overflowY: 'hidden' as 'hidden'
 }
-
 interface IFormState {
     orgn: string,
     dest: string,
     key: string,
-    item: string
+    item: string,
+    inst: string,
+    date: string,
+    time: string
 }
-interface IFormProps extends RouteComponentProps {
-
-}
+interface IFormProps extends RouteComponentProps { }
 
 export default FindRide;
