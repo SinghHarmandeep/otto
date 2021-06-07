@@ -35,13 +35,12 @@ class FindRide extends React.Component<IFormProps, IFormState> {
     render() {
         return (
             <div>
-                {(!getAccessToken()) ? (
-                    <div />
-                ) : (
+                {(!getAccessToken()) ? (<div />) : (
                     <div>
                         <h1 className='text-center text-dark'>Get your Right Hand Man</h1 >
                         <p className='text-center text-dark'>Enter Package Details</p>
-                        <div className='col-4 bg-dark mx-2 rounded shadow-lg' style={{ position: 'relative' }} >
+                        <div className='col-4 bg-dark mx-2 rounded shadow-lg'
+                            style={{ position: 'relative' }} >
                             < Detials
                                 dest={this.state.dest}
                                 orgn={this.state.orgn}
@@ -64,7 +63,6 @@ class FindRide extends React.Component<IFormProps, IFormState> {
                                         strokeDasharray="5,5"
                                         stroke-width="6" />
                                 </svg>
-
                             </div>
                         </div>
                         <div style={mapStyle}>
