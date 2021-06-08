@@ -18,11 +18,10 @@ const home = () => {
                 <li className="list-group-item text-dark">3. Choose dropoff location</li>
             </ul>
             <h1 >
-                Yay that's all. Now you pay us for the exclusive service and we
+                Yay that's all. Enjoy the exclusive service while we
                 deliver your item in real time!
                 <br></br>
-                <form action={(getAccessToken()) ? '/findride' : '/login'}>
-
+                <form action={'/findride'}>
                     <button type='submit' className="btn btn-primary col-12">Let's get to it</button>
                 </form>
             </h1>

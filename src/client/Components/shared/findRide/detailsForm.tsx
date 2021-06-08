@@ -40,12 +40,8 @@ class Details extends React.Component<IDetailsProps> {
                 <label className="mt-2"> <span className='text-danger'>*</span>Item Discription:</label>
                 <input type="text" className="form-control"
                     value={this.props.item} required={true}
-                    onChange={e => this.props.setDetails('item', e.target.value)} placeholder="Book, Keys, Food, package..." />
-
-                <label className="mt-2"> <span className='text-danger'>*</span>Special Instructions:</label>
-                <input type="text" className="form-control"
-                    value={this.props.inst} required={true}
-                    onChange={e => this.props.setDetails('inst', e.target.value)} placeholder="Leave by door, meet at sidewalk, fragile..." />
+                    onChange={e => this.props.setDetails('item', e.target.value)}
+                    placeholder="Book, Keys, Food, package..." />
 
                 <div className="row mt-2">
                     <div className='col'>
@@ -64,6 +60,12 @@ class Details extends React.Component<IDetailsProps> {
                             required={true} />
                     </div>
                 </div>
+
+                <label className="mt-2"> <span className='text-danger'>*</span>Special Instructions:</label>
+                <textarea className="form-control" rows={1} value={this.props.inst} required={true}
+                    onChange={e => this.props.setDetails('inst', e.target.value)}
+                    placeholder="Leave by door, meet at sidewalk, fragile..." />
+
                 <button type="submit" className="btn btn-primary col my-3">Get Quote!</button>
             </form >)
     }

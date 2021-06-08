@@ -48,6 +48,7 @@ const navbar = (props: navProps) => {
             <Nav className='mr-auto'>
                 {(user) && <Nav.Link href="findride">Find Ride</Nav.Link>}
                 <Nav.Link href="about">About OTTO</Nav.Link>
+                <Nav.Link href="deliver">For Drivers</Nav.Link>
                 <Nav.Link href="contact">Contact Us</Nav.Link>
                 {/* <Nav.Link href="features">Features</Nav.Link> */}
             </Nav>

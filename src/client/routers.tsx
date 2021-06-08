@@ -24,6 +24,7 @@ const dd = () => {
                 <Route exact path='/findride' render={props => (<Ride {...props} />)} />
                 <Route exact path='/about' component={About} />
                 <Route exact path='/contact' component={Contact} />
+                
                 {/* <Route exact path = '/login' component = {login is=setLogedin} /> */}
                 {/* <Route exact path = "/"><Movies logo = {logo} /></Route> for fucntionalComponents */}
                 <Route exact path='/login' render={props => (<Login setLog={setLogedin} {...props} />)} />
