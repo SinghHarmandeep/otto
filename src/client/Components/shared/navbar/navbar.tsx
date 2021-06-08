@@ -44,9 +44,8 @@ const navbar = (props: navProps) => {
         <Navbar bg="dark"
             variant="dark"
             style={Style}>
-            <Navbar.Brand href="/">Otto</Navbar.Brand>
+            <Navbar.Brand href="/">OttO</Navbar.Brand>
             <Nav className='mr-auto'>
-                <Nav.Link href="/">Home</Nav.Link>
                 {(user) && <Nav.Link href="findride">Find Ride</Nav.Link>}
                 <Nav.Link href="about">About OTTO</Nav.Link>
                 <Nav.Link href="contact">Contact Us</Nav.Link>

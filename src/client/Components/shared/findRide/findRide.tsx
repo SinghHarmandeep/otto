@@ -17,7 +17,9 @@ class FindRide extends React.Component<IFormProps, IFormState> {
             item: '',
             inst: '',
             date: '',
-            time: ''
+            time: '',
+            phone: '',
+            name: ''
         }
     }
 
@@ -30,6 +32,7 @@ class FindRide extends React.Component<IFormProps, IFormState> {
         } else {
             this.props.history.push('/login')
         }
+
     }
 
     render() {
@@ -48,20 +51,17 @@ class FindRide extends React.Component<IFormProps, IFormState> {
                                 inst={this.state.inst}
                                 time={this.state.time}
                                 date={this.state.date}
-                                setItem={this.setItem}
-                                setPickUp={this.setPickUp}
-                                setDropOff={this.setDropOff}
-                                setInst={this.setInst}
-                                setDate={this.setDate}
-                                setTime={this.setTime}
+                                name={this.state.name}
+                                phone={this.state.phone}
+                                setDetails={this.setDetails}
                                 submit={this.handleSubmit}
                             />
-                            <div style={{ position: 'absolute', right: '3px', top: '60px', pointerEvents: 'none' }}>
+                            <div style={{ position: 'absolute', right: '3px', top: '50px', pointerEvents: 'none' }}>
                                 <svg width="6" height="100">
                                     <line x1="0" y1="0" x2="0" y2="100"
                                         stroke='white'
                                         strokeDasharray="5,5"
-                                        stroke-width="6" />
+                                        strokeWidth="6" />
                                 </svg>
                             </div>
                         </div>
@@ -77,13 +77,37 @@ class FindRide extends React.Component<IFormProps, IFormState> {
             </div>
         )
     }
+    setDetails = (key: string, val: string) => {
+        switch (key) {
+            case 'orgn':
+                this.setState({ orgn: val })
+                break;
+            case 'dest':
+                this.setState({ dest: val })
+                break;
+            case 'phone':
+                this.setState({ phone: val })
+                break;
+            case 'name':
+                this.setState({ name: val })
+                break;
+            case 'item':
+                this.setState({ item: val })
+                break;
+            case 'inst':
+                this.setState({ inst: val })
+                break;
+            case 'date':
+                this.setState({ date: val })
+                break;
+            case 'time':
+                this.setState({ time: val })
+                break;
+            default:
+                break;
+        }
 
-    setItem = (val: string) => this.setState({ item: val })
-    setTime = (val: string) => this.setState({ time: val })
-    setDate = (val: string) => this.setState({ date: val })
-    setInst = (val: string) => this.setState({ inst: val })
-    setPickUp = (val: string) => this.setState({ orgn: val })
-    setDropOff = (val: string) => this.setState({ dest: val })
+    }
 
     handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault()
@@ -93,10 +117,12 @@ class FindRide extends React.Component<IFormProps, IFormState> {
                 data: {
                     pickup: this.state.orgn,
                     dropoff: this.state.dest,
+                    contactName: this.state.name,
+                    contactpPhone: this.state.phone,
                     item: this.state.item,
                     inst: this.state.inst,
                     date: this.state.date,
-                    time: this.state.time
+                    time: this.state.time,
                 }
             })
         res.then(res => {
@@ -131,7 +157,9 @@ interface IFormState {
     item: string,
     inst: string,
     date: string,
-    time: string
+    time: string,
+    phone: string,
+    name: string
 }
 interface IFormProps extends RouteComponentProps { }
 
