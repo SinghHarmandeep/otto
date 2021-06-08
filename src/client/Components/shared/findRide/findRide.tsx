@@ -19,7 +19,7 @@ class FindRide extends React.Component<IFormProps, IFormState> {
             date: '',
             time: '',
             phone: '',
-            name: ''
+            name: '',
         }
     }
 
@@ -106,12 +106,10 @@ class FindRide extends React.Component<IFormProps, IFormState> {
             default:
                 break;
         }
-
     }
 
     handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault()
-        // setAuth(localStorage.getItem('token'))
         let res = request('/findride', 'POST',
             {
                 data: {
@@ -133,13 +131,10 @@ class FindRide extends React.Component<IFormProps, IFormState> {
         });
     }
 
-    showAlert = (msg: string) => {
-        alert(msg)
-    }
+    showAlert = (msg: string) => alert(msg)
 }
 
 const mapStyle = {
-    // position: 'absolute' as 'absolute',
     position: 'fixed' as 'fixed',
     left: '0px',
     top: '0px',
@@ -147,7 +142,6 @@ const mapStyle = {
     height: '100%',
     zIndex: -1,
     backgroundColor: '#212529',
-    // backgroundColor: 'blue',
     overflowY: 'hidden' as 'hidden'
 }
 interface IFormState {
@@ -159,7 +153,7 @@ interface IFormState {
     date: string,
     time: string,
     phone: string,
-    name: string
+    name: string,
 }
 interface IFormProps extends RouteComponentProps { }
 
