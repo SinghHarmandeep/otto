@@ -27,19 +27,14 @@ class Login extends React.Component<ILoginProps, ILoginState> {
                         <label htmlFor="email" className="col-sm-2 col-form-label">Email</label>
                         <input type="text" name="email" className='form-control col-3'
                             value={this.state.email}
-                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => this.setState({ email: e.target.value })}
-                            placeholder='Cockroach' />
-
+                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => this.setState({ email: e.target.value })} />
                     </div>
 
                     <div className="row justify-content-center form-group">
                         <label htmlFor="password" className="col-sm-2 col-form-label">Password</label>
-                        {/* <div className='col-4'> */}
                         <input type="password" name='pass' className='form-control col-3'
                             value={this.state.password}
-                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => this.setState({ password: e.target.value })}
-                            placeholder='keep it long' />
-                        {/* </div> */}
+                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => this.setState({ password: e.target.value })} />
                     </div>
                     <div className="row justify-content-center form-group">
                         <button type="submit" className="btn btn-primary col-5">Login</button>

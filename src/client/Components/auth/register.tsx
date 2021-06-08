@@ -63,45 +63,45 @@ class Register extends React.Component<Props, State> {
                     {/* username */}
                     <div className="row justify-content-center form-group">
                         <label htmlFor="username" className="col-sm-2 col-form-label">Username:</label>
-                        <input type="text" name="username" placeholder='Almighty' className='form-control col-4'
-                            value={this.state.username}
-                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => this.setState({ username: e.target.value })}
+                        <input type="text" name="username" placeholder='Almighty' className='form-control col-3'
+                            value={this.state.username} required={true}
+                            onChange={e => this.setState({ username: e.target.value })}
                         />
                     </div>
                     {/* email */}
                     <div className="row justify-content-center form-group">
                         <label htmlFor="email" className="col-sm-2 col-form-label">Email:</label>
-                        <input type="email" name="email" placeholder='takeit@drop.off' className='form-control col-4'
-                            value={this.state.email}
-                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => this.setState({ email: e.target.value })}
+                        <input type="email" name="email" placeholder='takeit@drop.off' className='form-control col-3'
+                            value={this.state.email} required={true}
+                            onChange={e => this.setState({ email: e.target.value })}
                         />
                     </div>
                     {/* password */}
                     <div className="row justify-content-center form-group">
                         <label htmlFor="pass" className="col-sm-2 col-form-label">Password:</label>
-                        <input type="password" name='pass' placeholder='********' className='form-control col-4'
-                            value={this.state.pass}
-                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => this.setState({ pass: e.target.value })}
+                        <input type="password" name='pass' placeholder='keep it long' className='form-control col-3'
+                            value={this.state.pass} required={true}
+                            onChange={e => this.setState({ pass: e.target.value })}
                         />
                     </div>
                     {/* re-enter pass */}
                     <div className="row justify-content-center form-group">
                         <label htmlFor="pass" className="col-sm-2 col-form-label">Confirm Password:</label>
-                        <input type="password" name='re-pass' placeholder='********' className='form-control col-4'
-                            value={this.state.repass}
-                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => this.setState({ repass: e.target.value })}
+                        <input type="password" name='re-pass' placeholder='match it' className='form-control col-3'
+                            value={this.state.repass} required={true}
+                            onChange={e => this.setState({ repass: e.target.value })}
                         />
                     </div>
                     {/* phone number */}
                     <div className="row justify-content-center form-group">
                         <label htmlFor="phone" className="col-sm-2 col-form-label">Phone no:</label>
-                        <input type="number" name="phone" placeholder='123456789' className='form-control col-4'
-                            value={this.state.number}
-                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => this.setState({ number: e.target.value })}
+                        <input type="number" name="phone" placeholder='123456789' className='form-control col-3'
+                            value={this.state.number} required={true}
+                            onChange={e => this.setState({ number: e.target.value })}
                         />
                     </div>
                     <div className="row justify-content-center form-group">
-                        <button type="submit" className="btn btn-primary col-6">Sign Up</button>
+                        <button type="submit" className="btn btn-primary col-5">Sign Up</button>
                     </div>
                     <div className="row justify-content-center form-group">
 
