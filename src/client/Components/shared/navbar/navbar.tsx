@@ -11,9 +11,6 @@ const navbar = (props: navProps) => {
 
     const history = useHistory();
     const location = useLocation()
-    // console.log(location);
-
-    // console.log(props.arr[0]);
 
     const [user, setUser] = useState(getAccessToken());
 
@@ -54,16 +51,15 @@ const navbar = (props: navProps) => {
             </Nav>
 
             {user ? (
-                < div className="form-inline my-2 my-lg-0">
+                < div className="ml-auto form-inline my-2 my-lg-0">
                     <p className="my-2 my-sm-0 mr-3 text-success">{decodedUser?.handle}</p>
                     <Nav.Link className="btn btn-outline-success my-2 my-sm-0" onClick={handleLogout} >Log out</Nav.Link>
                 </div>
             ) : (
-                <form className="form-inline my-2 my-lg-0">
-                    {/* <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" /> */}
-                    <Nav.Link className="my-2 my-sm-0 text-success" href="login">Sign in</Nav.Link>
-                    <Nav.Link className="btn btn-outline-success my-2 my-sm-0" href="signup">Get started</Nav.Link>
-                </form>
+                <Nav className="ml-auto navbar-nav">
+                    <Nav.Link className="mr-2 my-sm-0 text-success" href="login">Sign in</Nav.Link>
+                    <Nav.Link className="btn btn-outline-success my-4 my-sm-0 text-success" href="signup">Get started</Nav.Link>
+                </Nav>
             )
             }
         </Navbar >
