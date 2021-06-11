@@ -1,5 +1,7 @@
 import * as express from 'express';
 import { authenticate } from 'passport'
+import * as AWS from 'aws-sdk'
+import * as multer from 'multer'
 
 const route = express.Router();
 
