@@ -1,4 +1,4 @@
-import * as express from "express"; //stick with this syntex, as specified in the cofig files
+import * as express from "express";
 import * as cors from "cors";
 import * as mongoose from 'mongoose';
 import config from './config';
