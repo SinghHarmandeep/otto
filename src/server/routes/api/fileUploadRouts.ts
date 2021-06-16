@@ -1,14 +1,14 @@
 import * as express from 'express';
 import { authenticate } from 'passport'
-// import * as AWS from 'aws-sdk'
-// import * as multer from 'multer'
+import * as AWS from 'aws-sdk'
+import * as multer from 'multer'
 
 const route = express.Router();
 
 //to upload file/object to s3 & store fileInfo in DB
 route.put('/upload', authenticate('jwt'), (req, res, next) => {
   console.log(req.body);
-  res.sendStatus(203)
+  res.sendStatus(202)
 })
 
 //to read the file from s3
